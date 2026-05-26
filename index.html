@@ -1,0 +1,3939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Diosdado Macapagal Memorial Highschool | School Performance Analytics</title>
+    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAgMTIwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IkRNTUhTIExvZ28iPgogIDxkZWZzPgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzFhNGY4YyIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwZDJmNWMiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxjaXJjbGUgY3g9IjYwIiBjeT0iNjAiIHI9IjU2IiBmaWxsPSJ1cmwoI2cpIiBzdHJva2U9IiNmNGM0MzAiIHN0cm9rZS13aWR0aD0iNCIvPgogIDxjaXJjbGUgY3g9IjYwIiBjeT0iNjAiIHI9IjQ0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgb3BhY2l0eT0iMC44NSIvPgogIDx0ZXh0IHg9IjYwIiB5PSI1MiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2Y0YzQzMCIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjIyIiBmb250LXdlaWdodD0iNzAwIj5ETU1IUzwvdGV4dD4KICA8dGV4dCB4PSI2MCIgeT0iNzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNmZmZmZmYiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSI5IiBsZXR0ZXItc3BhY2luZz0iMSI+RVNULiAyMDAxPC90ZXh0PgogIDx0ZXh0IHg9IjYwIiB5PSI4OCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2E4ZDRmZiIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjciPkZMT1JJREFCTEFOQ0E8L3RleHQ+Cjwvc3ZnPgo=" type="image/svg+xml" />
+    <!-- Google Fonts & Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style data-inlined>
+/* DMMHS Enterprise Dark Analytics Theme — visual only */
+:root {
+    --bg-page: #0F172A;
+    --sidebar-bg: #111827;
+    --card-bg: #1E293B;
+    --card-border: #334155;
+    --text-primary: #F8FAFC;
+    --text-secondary: #CBD5E1;
+    --accent-blue: #38BDF8;
+    --accent-gold: #FACC15;
+    --accent-glow: rgba(56, 189, 248, 0.22);
+    --input-bg: rgba(15, 23, 42, 0.65);
+    --main-bg: rgba(30, 41, 59, 0.55);
+    --badge-bg: rgba(51, 65, 85, 0.65);
+    --table-border: #334155;
+    --chart-grid: rgba(148, 163, 184, 0.15);
+    --chart-tick: #CBD5E1;
+    --dmmhs-navy: #0F172A;
+    --dmmhs-blue: #38BDF8;
+    --dmmhs-gold: #FACC15;
+    --dmmhs-accent: #38BDF8;
+    --toast-bg: rgba(17, 24, 39, 0.96);
+    --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.45);
+    --shadow-glow: 0 0 24px rgba(56, 189, 248, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+}
+
+body.app-active {
+    padding: 0.75rem;
+    background: var(--bg-page);
+    background-image:
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(56, 189, 248, 0.12), transparent),
+        radial-gradient(ellipse 60% 40% at 100% 100%, rgba(250, 204, 21, 0.06), transparent);
+    align-items: stretch;
+}
+
+body.app-active.light-theme {
+    --bg-page: #f1f5f9;
+    --sidebar-bg: #ffffff;
+    --card-bg: #ffffff;
+    --card-border: #cbd5e1;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --input-bg: #f8fafc;
+    --main-bg: rgba(255, 255, 255, 0.9);
+    --badge-bg: #e2e8f0;
+    --table-border: #e2e8f0;
+    --chart-tick: #334155;
+    background: linear-gradient(135deg, #e9f0fc 0%, #d9e2ef 100%);
+}
+
+/* Login */
+#loginPageWrap {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+#loginPageWrap.hidden { display: none; }
+.login-page-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(2, 132, 199, 0.95), rgba(15, 23, 42, 0.85)), radial-gradient(circle at top left, rgba(250, 204, 21, 0.16), transparent 30%), radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.18), transparent 35%);
+    background-color: #0074D9;
+}
+.login-page-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 35, 80, 0.18);
+    pointer-events: none;
+}
+@media (max-width: 900px) {
+    #loginPageWrap { justify-content: center; align-items: center; padding: 1rem; }
+}
+.glass {
+    background: var(--card-bg);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--card-border);
+    border-radius: 1.25rem;
+    box-shadow: var(--shadow-lg);
+}
+.login-container {
+    width: 100%;
+    max-width: 420px;
+    padding: 2rem 1.8rem;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+}
+#loginPageWrap .glass {
+    background: rgba(15, 23, 42, 0.75);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+}
+#loginPageWrap .logo-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 1.25rem;
+}
+#loginPageWrap .logo-area .brand-logo {
+    display: block;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    border: 3px solid var(--accent-gold);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+}
+#loginPageWrap .login-motto { color: var(--accent-gold); letter-spacing: 2px; font-weight: 700; margin: 0 0 0.5rem; }
+#loginPageWrap .logo-area h2 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    background: none;
+    -webkit-text-fill-color: unset;
+    text-align: center;
+    width: 100%;
+    margin: 0 0 0.35rem;
+}
+#loginPageWrap .login-sub { color: var(--text-secondary); }
+
+.input-group { margin-bottom: 1.3rem; position: relative; }
+.input-group i:not(.toggle-pwd) {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+}
+.input-group input {
+    width: 100%;
+    padding: 0.85rem 1rem 0.85rem 2.8rem;
+    background: var(--input-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    color: var(--text-primary);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.input-group input:focus {
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+}
+.login-btn {
+    width: 100%;
+    padding: 0.85rem;
+    background: linear-gradient(105deg, #0284c7, var(--accent-blue));
+    border: none;
+    border-radius: 0.75rem;
+    font-weight: 700;
+    color: #0f172a;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(56, 189, 248, 0.35);
+}
+.error-msg {
+    background: rgba(239, 68, 68, 0.15);
+    border-radius: 0.75rem;
+    padding: 0.5rem;
+    text-align: center;
+    margin-top: 1rem;
+    display: none;
+    color: #fca5a5;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+/* App layout */
+.app-wrapper {
+    display: none;
+    width: 100%;
+    max-width: 1680px;
+    margin: 0 auto;
+    gap: 0.75rem;
+    min-height: calc(100vh - 1.5rem);
+    align-items: stretch;
+}
+.app-wrapper[style*="flex"] { display: flex !important; }
+.dashboard-shell {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    gap: 0.75rem;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 280px;
+    flex-shrink: 0;
+    background: var(--sidebar-bg);
+    backdrop-filter: blur(20px);
+    border-radius: 1rem;
+    padding: 1rem 0.75rem;
+    border: 1px solid var(--card-border);
+    box-shadow: var(--shadow-lg);
+    transition: width 0.3s ease, padding 0.3s ease;
+    position: relative;
+}
+.sidebar.collapsed { width: 72px; }
+.sidebar.collapsed .sidebar-brand-text,
+.sidebar.collapsed .nav-item span,
+.sidebar.collapsed .sidebar-footer-text { display: none; }
+.sidebar.collapsed .nav-item { justify-content: center; padding: 0.75rem; }
+.sidebar-collapse-btn {
+    position: absolute;
+    top: 0.75rem;
+    right: -12px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid var(--card-border);
+    background: var(--card-bg);
+    color: var(--accent-blue);
+    cursor: pointer;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    box-shadow: var(--shadow-glow);
+}
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0.5rem 1rem;
+    border-bottom: 1px solid var(--card-border);
+    margin-bottom: 1rem;
+}
+.sidebar-logo {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent-gold);
+    box-shadow: 0 0 16px rgba(250, 204, 21, 0.35);
+}
+.brand-title {
+    font-size: 0.72rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--text-primary);
+    display: block;
+}
+.brand-sub {
+    font-size: 0.65rem;
+    color: var(--accent-blue);
+    display: block;
+    margin-top: 2px;
+}
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.7rem 1rem;
+    margin: 0.2rem 0;
+    border-radius: 0.65rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.25s ease;
+    font-weight: 500;
+    font-size: 0.88rem;
+    border: 1px solid transparent;
+}
+.nav-item i { width: 1.1rem; text-align: center; color: var(--accent-blue); opacity: 0.85; }
+.nav-item:hover {
+    background: var(--accent-glow);
+    color: var(--text-primary);
+    border-color: rgba(56, 189, 248, 0.2);
+    transform: translateX(3px);
+}
+.nav-item.active {
+    background: linear-gradient(90deg, rgba(56, 189, 248, 0.25), rgba(56, 189, 248, 0.08));
+    color: var(--text-primary);
+    border-color: rgba(56, 189, 248, 0.35);
+    box-shadow: inset 3px 0 0 var(--accent-blue);
+}
+.sidebar-footer-text {
+    font-size: 0.65rem;
+    color: var(--text-secondary);
+    text-align: center;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--card-border);
+}
+
+/* Premium header */
+.premium-header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.85rem 1.25rem;
+    background: linear-gradient(180deg, rgba(30, 41, 59, 0.95), rgba(17, 24, 39, 0.9));
+    border: 1px solid var(--card-border);
+    border-radius: 1rem;
+    backdrop-filter: blur(20px);
+    box-shadow: var(--shadow-lg);
+}
+.header-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+.header-datetime { display: flex; align-items: center; gap: 0.4rem; }
+.header-datetime i { color: var(--accent-blue); }
+.header-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+}
+.header-logo {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent-gold);
+    box-shadow: 0 0 28px rgba(250, 204, 21, 0.4), 0 8px 24px rgba(0, 0, 0, 0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.header-logo:hover {
+    transform: scale(1.06);
+    box-shadow: 0 0 36px rgba(250, 204, 21, 0.55), 0 12px 32px rgba(56, 189, 248, 0.25);
+}
+.header-school-name {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: 0.02em;
+    line-height: 1.25;
+    max-width: 420px;
+}
+.header-tagline {
+    font-size: 0.72rem;
+    color: var(--accent-blue);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.header-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.75rem;
+}
+.header-profile {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.35rem 0.75rem 0.35rem 0.35rem;
+    background: var(--badge-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 2rem;
+}
+.profile-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-blue), #0284c7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0f172a;
+    font-size: 0.9rem;
+}
+.profile-name { font-size: 0.78rem; font-weight: 600; color: var(--text-primary); display: block; }
+.profile-role { font-size: 0.65rem; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 0.05em; }
+.notif-btn { position: relative; }
+.notif-dot {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 8px;
+    height: 8px;
+    background: #ef4444;
+    border-radius: 50%;
+    border: 2px solid var(--sidebar-bg);
+}
+
+/* Main content */
+.main-content {
+    flex: 1;
+    background: var(--main-bg);
+    backdrop-filter: blur(14px);
+    border-radius: 1rem;
+    padding: 1.25rem;
+    border: 1px solid var(--card-border);
+    overflow-y: auto;
+    max-height: calc(100vh - 140px);
+    box-shadow: var(--shadow-lg);
+}
+.page-toolbar, .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--card-border);
+}
+.page-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.page-title::before {
+    content: '';
+    width: 4px;
+    height: 1.4rem;
+    background: linear-gradient(180deg, var(--accent-blue), var(--accent-gold));
+    border-radius: 2px;
+}
+
+.logout-side, .theme-toggle-btn {
+    background: var(--badge-bg);
+    border: 1px solid var(--card-border);
+    padding: 0.5rem 1rem;
+    border-radius: 0.65rem;
+    color: var(--text-primary);
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.8rem;
+    transition: all 0.2s;
+}
+.logout-side:hover, .theme-toggle-btn:hover {
+    border-color: var(--accent-blue);
+    box-shadow: var(--shadow-glow);
+}
+
+/* KPI cards */
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+.info-card {
+    background: linear-gradient(145deg, var(--card-bg), rgba(30, 41, 59, 0.8));
+    border-radius: 1rem;
+    padding: 1.15rem;
+    border: 1px solid var(--card-border);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s;
+    color: var(--text-primary);
+    position: relative;
+    overflow: hidden;
+}
+.info-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-blue), transparent);
+    opacity: 0.6;
+}
+.info-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-glow);
+    border-color: rgba(56, 189, 248, 0.35);
+}
+.kpi-card .kpi-icon {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    opacity: 0.2;
+    color: var(--accent-blue);
+}
+.kpi-card.kpi-drop::before { background: linear-gradient(90deg, #f87171, transparent); }
+.kpi-card.kpi-rep::before { background: linear-gradient(90deg, var(--accent-gold), transparent); }
+.kpi-card.kpi-teach::before { background: linear-gradient(90deg, #a78bfa, transparent); }
+.info-card h4 {
+    color: var(--accent-blue);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+.info-card .value {
+    font-size: 2.1rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    font-variant-numeric: tabular-nums;
+}
+.value-updated { animation: cardPop 0.45s cubic-bezier(0.2, 0.9, 0.4, 1.1); }
+@keyframes cardPop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); text-shadow: 0 0 12px rgba(56, 189, 248, 0.5); }
+    100% { transform: scale(1); }
+}
+
+/* Tables */
+.table-scroll { overflow-x: auto; border-radius: 0.75rem; margin-top: 0.5rem; }
+.data-table {
+    width: 100%;
+    color: var(--text-primary);
+    font-size: 0.85rem;
+    border-collapse: collapse;
+}
+.data-table thead th {
+    position: sticky;
+    top: 0;
+    background: #1e293b;
+    z-index: 2;
+    padding: 0.75rem 0.5rem;
+    font-weight: 600;
+    color: var(--accent-blue);
+    border-bottom: 2px solid var(--card-border);
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+}
+body.light-theme .data-table thead th { background: #e2e8f0; }
+.data-table td {
+    padding: 0.65rem 0.5rem;
+    border-bottom: 1px solid var(--table-border);
+}
+.data-table tbody tr { transition: background 0.15s; }
+.data-table tbody tr:hover { background: rgba(56, 189, 248, 0.08); }
+
+.badge-list { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.5rem; }
+.badge {
+    background: var(--badge-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 2rem;
+    padding: 0.3rem 0.9rem;
+    font-size: 0.75rem;
+    color: var(--text-primary);
+}
+canvas { max-height: 280px; width: 100%; margin-top: 0.75rem; }
+.year-selector, select {
+    background: var(--input-bg);
+    border-radius: 0.5rem;
+    padding: 0.45rem 1rem;
+    border: 1px solid var(--card-border);
+    color: var(--text-primary);
+    font-weight: 500;
+    cursor: pointer;
+}
+.mobile-menu-btn {
+    display: none;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    border-radius: 0.65rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+.dashboard-flex { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 1rem; gap: 1rem; }
+.action-group { display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; }
+.form-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.8rem; margin: 1rem 0; }
+.form-field label { font-size: 0.7rem; font-weight: 600; color: var(--text-secondary); }
+.form-field input, .form-field select {
+    background: var(--input-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 0.5rem;
+    padding: 0.45rem 0.6rem;
+    color: var(--text-primary);
+}
+.btn-primary {
+    background: linear-gradient(105deg, #0284c7, var(--accent-blue));
+    border: none;
+    padding: 0.55rem 1.1rem;
+    border-radius: 0.5rem;
+    color: #0f172a;
+    cursor: pointer;
+    font-weight: 700;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-primary:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(56, 189, 248, 0.35); }
+.btn-secondary {
+    background: var(--badge-bg);
+    border: 1px solid var(--card-border);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    color: var(--text-primary);
+    cursor: pointer;
+}
+.btn-icon {
+    background: var(--badge-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    cursor: pointer;
+    color: var(--text-primary);
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-icon:hover {
+    background: var(--accent-glow);
+    border-color: var(--accent-blue);
+    transform: scale(1.08);
+    color: var(--accent-blue);
+}
+.user-pill {
+    background: var(--badge-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 2rem;
+    padding: 0.35rem 0.85rem;
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+}
+.role-badge {
+    background: linear-gradient(105deg, #0284c7, var(--accent-blue));
+    border-radius: 20px;
+    padding: 2px 10px;
+    font-size: 0.65rem;
+    color: #0f172a;
+    font-weight: 700;
+}
+.insights-panel {
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.12), rgba(250, 204, 21, 0.06));
+    border: 1px solid var(--card-border);
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+.insights-panel h4 { color: var(--accent-gold); margin-bottom: 0.5rem; font-size: 0.85rem; }
+.insight-item { font-size: 0.82rem; color: var(--text-secondary); padding: 0.4rem 0; border-bottom: 1px solid var(--table-border); }
+.view-enter { animation: viewFadeIn 0.35s ease; }
+@keyframes viewFadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.toast-notify {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--toast-bg);
+    color: var(--text-primary);
+    padding: 12px 20px;
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-lg);
+    z-index: 2000;
+    font-size: 0.85rem;
+    border-left: 4px solid var(--accent-gold);
+    border: 1px solid var(--card-border);
+}
+.modal-overlay { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(6px); display: flex; align-items: center; justify-content: center; z-index: 3000; }
+.modal-card {
+    background: var(--card-bg);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    max-width: 480px;
+    width: 92%;
+    border: 1px solid var(--card-border);
+    color: var(--text-primary);
+    box-shadow: var(--shadow-lg);
+}
+.sync-badge { font-size: 0.68rem; background: var(--badge-bg); padding: 4px 10px; border-radius: 20px; color: var(--text-secondary); border: 1px solid var(--card-border); }
+.sync-badge.online { color: #4ade80; border-color: rgba(74, 222, 128, 0.4); }
+.editable-cell { cursor: pointer; border-bottom: 1px dashed var(--accent-gold); }
+.editable-cell:hover { background: var(--accent-glow); }
+.btn-danger { background: rgba(239, 68, 68, 0.2); border: 1px solid rgba(239, 68, 68, 0.4); padding: 0.35rem 0.8rem; border-radius: 0.5rem; color: #fca5a5; cursor: pointer; font-size: 0.75rem; }
+.btn-edit { background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.35); padding: 0.25rem 0.6rem; border-radius: 0.5rem; color: var(--accent-blue); cursor: pointer; font-size: 0.7rem; }
+hr { border: none; border-top: 1px solid var(--card-border); margin: 1rem 0; }
+.strand-chart-container { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem; }
+
+@media (max-width: 1100px) {
+    .premium-header { grid-template-columns: 1fr; text-align: center; }
+    .header-left { align-items: center; flex-direction: row; justify-content: center; flex-wrap: wrap; }
+    .header-right { justify-content: center; }
+    .header-school-name { font-size: 0.9rem; }
+}
+@media (max-width: 780px) {
+    .app-wrapper { flex-direction: column; }
+    .sidebar { width: 100%; display: none; }
+    .sidebar.show { display: block; }
+    .sidebar.collapsed { width: 100%; }
+    .mobile-menu-btn { display: inline-block; }
+    .main-content { max-height: none; }
+    .header-logo { width: 56px; height: 56px; }
+}
+/* Analytics Continuum */
+.ac-continuum .ac-hero { margin-bottom: 1rem; }
+.ac-sub { font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.25rem; }
+.ac-section { margin-bottom: 1.5rem; }
+.ac-section-head { margin-bottom: 0.75rem; }
+.ac-section-head h4 { font-size: 1.15rem; color: var(--text-primary); margin: 0.35rem 0 0.15rem; }
+.ac-section-head p { font-size: 0.75rem; color: var(--text-secondary); margin: 0; }
+.ac-badge { display: inline-block; font-size: 0.65rem; font-weight: 800; letter-spacing: 0.06em; padding: 0.25rem 0.65rem; border-radius: 2rem; margin-bottom: 0.35rem; }
+.badge-desc { background: rgba(56, 189, 248, 0.2); color: var(--accent-blue); border: 1px solid rgba(56, 189, 248, 0.35); }
+.badge-diag { background: rgba(167, 139, 250, 0.2); color: #c4b5fd; border: 1px solid rgba(167, 139, 250, 0.35); }
+.badge-pred { background: rgba(250, 204, 21, 0.15); color: var(--accent-gold); border: 1px solid rgba(250, 204, 21, 0.35); }
+.badge-pres { background: rgba(52, 211, 153, 0.15); color: #6ee7b7; border: 1px solid rgba(52, 211, 153, 0.35); }
+.ac-narrative { font-size: 0.88rem; line-height: 1.55; color: var(--text-secondary); margin-bottom: 1rem; padding: 0.85rem 1rem; background: rgba(15, 23, 42, 0.5); border-radius: 0.65rem; border-left: 3px solid var(--accent-blue); }
+.ac-grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-top: 1rem; }
+.ac-kpi-row { margin-bottom: 1rem; }
+.ac-trend.up { color: #4ade80; margin-left: 0.35rem; }
+.ac-trend.down { color: #f87171; margin-left: 0.35rem; }
+.ac-trend.neutral { color: var(--text-secondary); margin-left: 0.35rem; }
+.ac-risk { font-size: 0.6rem; font-weight: 800; padding: 0.15rem 0.45rem; border-radius: 4px; }
+.risk-high { background: rgba(239, 68, 68, 0.25); color: #fca5a5; }
+.risk-medium { background: rgba(250, 204, 21, 0.2); color: var(--accent-gold); }
+.risk-low { background: rgba(52, 211, 153, 0.2); color: #6ee7b7; }
+.ac-footnote { font-size: 0.65rem; color: var(--text-secondary); margin-top: 0.5rem; }
+.ac-hint { font-size: 0.65rem; color: var(--accent-blue); }
+.ac-actions { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.75rem; }
+.ac-action-card { border-left: 3px solid var(--accent-blue); }
+.ac-action-card.priority-high { border-left-color: #f87171; }
+.ac-action-card.priority-medium { border-left-color: var(--accent-gold); }
+.ac-action-head { margin-bottom: 0.4rem; font-size: 0.85rem; }
+.ac-label { font-size: 0.7rem; color: var(--text-secondary); display: block; margin-bottom: 0.2rem; }
+.ac-combo-card { margin-bottom: 1rem; }
+.ac-combo-card canvas { max-height: 320px; }
+.ac-conditions { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 0.5rem; }
+.ac-cond-tag { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; padding: 0.12rem 0.4rem; border-radius: 4px; background: rgba(148, 163, 184, 0.15); color: var(--text-secondary); border: 1px solid rgba(148, 163, 184, 0.2); }
+
+/* Executive overview */
+.exec-overview { background: linear-gradient(135deg, rgba(56, 189, 248, 0.12), rgba(250, 204, 21, 0.06)); border: 1px solid var(--card-border); border-radius: 1rem; padding: 1rem 1.25rem; margin-bottom: 1rem; }
+.exec-overview h3 { font-size: 1rem; color: var(--text-primary); margin-bottom: 0.35rem; }
+.exec-overview p { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5; }
+.global-slicer { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; padding: 0.85rem 1rem; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 0.75rem; margin-bottom: 1rem; }
+.global-slicer label { font-weight: 600; color: var(--accent-blue); font-size: 0.85rem; }
+
+/* Reports */
+.report-toolbar { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; align-items: center; }
+.report-print-area { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 1rem; padding: 1.25rem; }
+.report-header-print { text-align: center; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 2px solid var(--card-border); }
+.report-header-print img { width: 64px; height: 64px; border-radius: 50%; margin-bottom: 0.5rem; }
+.report-tabs { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
+.report-tab { padding: 0.45rem 0.9rem; border-radius: 2rem; border: 1px solid var(--card-border); background: var(--badge-bg); color: var(--text-secondary); cursor: pointer; font-size: 0.75rem; font-weight: 600; transition: all 0.2s; }
+.report-tab.active, .report-tab:hover { background: var(--accent-glow); color: var(--text-primary); border-color: var(--accent-blue); }
+
+@media print {
+    .sidebar, .premium-header, .page-toolbar, .top-bar, .mobile-menu-btn, .action-group, #loginPageWrap, .report-toolbar, .report-tabs { display: none !important; }
+    .app-wrapper { display: block !important; }
+    .main-content { max-height: none; }
+    .report-print-area { border: none; box-shadow: none; }
+}
+/* ========== THEME TRANSITIONS ========== */
+body,
+body *,
+.kpi-card,
+.info-card,
+.analytics-panel,
+.sidebar,
+.dashboard-shell,
+.premium-header,
+.data-table,
+.modal-card,
+.toast-notify,
+.sync-badge,
+.user-pill,
+.btn-primary,
+.btn-secondary,
+.logout-side,
+.theme-toggle-btn,
+.year-selector,
+.analytics-selector,
+input,
+select,
+button,
+.card,
+.modal-overlay {
+    transition: background-color 0.3s ease, 
+                color 0.3s ease, 
+                border-color 0.3s ease, 
+                box-shadow 0.3s ease,
+                background 0.3s ease;
+}
+
+/* Light Theme Specific Overrides */
+body.light-theme {
+    --bg-primary: #f8fafc;
+    --bg-secondary: #f1f5f9;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --card-bg: #ffffff;
+    --border-color: #e2e8f0;
+    --input-bg: #ffffff;
+    --chart-tick: #475569;
+}
+
+body.light-theme .kpi-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .info-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+}
+
+body.light-theme .sidebar {
+    background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+    border-right: 1px solid #e2e8f0;
+}
+
+body.light-theme .premium-header {
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+body.light-theme .data-table th {
+    background: #f1f5f9;
+    color: #0f172a;
+}
+
+body.light-theme .data-table td {
+    border-bottom: 1px solid #e2e8f0;
+}
+
+body.light-theme .variance-table th {
+    background: #f1f5f9;
+}
+
+body.light-theme .forecast-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+}
+
+body.light-theme .whatif-panel {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+}
+
+body.light-theme .progress-bar-bg {
+    background: #e2e8f0;
+}
+
+body.light-theme .analytics-selector {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    color: #0f172a;
+}
+
+body.light-theme .slider-group input {
+    background: #e2e8f0;
+}
+
+/* Dark Theme - already defined in your existing CSS, but ensure smoothness */
+body.dark-theme {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --card-bg: #1e293b;
+    --border-color: #334155;
+    --input-bg: #334155;
+    --chart-tick: #94a3b8;
+}
+
+/* Glassmorphism effect for cards in both themes */
+.kpi-card, .info-card, .analytics-panel {
+    backdrop-filter: blur(0px);
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+}
+
+body.light-theme .kpi-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-theme .kpi-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Theme Toggle Button Enhancement */
+.theme-toggle-btn {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.theme-toggle-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Chart colors adapt to theme */
+body.light-theme canvas {
+    filter: brightness(0.95);
+}
+
+body.dark-theme canvas {
+    filter: brightness(1);
+}
+
+/* Scrollbar styling for both themes */
+body.light-theme ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+body.light-theme ::-webkit-scrollbar-track {
+    background: #e2e8f0;
+}
+
+body.light-theme ::-webkit-scrollbar-thumb {
+    background: #94a3b8;
+    border-radius: 4px;
+}
+
+body.dark-theme ::-webkit-scrollbar-track {
+    background: #1e293b;
+}
+
+body.dark-theme ::-webkit-scrollbar-thumb {
+    background: #475569;
+    border-radius: 4px;
+}
+
+/* ==================== DMMHS DASHBOARD - UPGRADES STYLES ==================== */
+/* Purpose: polish visuals only — spacing, alignment, colors, responsive, charts */
+
+/* Use existing theme variables where possible; provide fallbacks */
+:root {
+    --accent: #0b63d6;
+    --accent-2: #06b6d4;
+    --bg: #f6f7fb;
+    --surface: #ffffff;
+    --text: #0f172a;
+    --muted: #6b7280;
+    --border: rgba(15,23,42,0.06);
+    --radius: 10px;
+    --kpi-height: 120px;
+    --chart-height: 300px;
+}
+
+/* Root containers */
+.container-fluid, .main-content { max-width:1400px; margin:0 auto; padding:20px; }
+.row { display:flex; flex-wrap:wrap; gap:16px; }
+.col { flex:1; min-width:0; }
+
+/* Cards & Panels */
+.card { background:var(--surface); border-radius:var(--radius); border:1px solid var(--border); box-shadow:0 6px 18px rgba(11,22,40,0.04); padding:16px; }
+.card-header { display:flex; justify-content:space-between; align-items:center; gap:12px; padding-bottom:8px; border-bottom:1px dashed rgba(0,0,0,0.03); margin-bottom:12px; }
+.card-title { font-size:1rem; font-weight:600; color:var(--text); }
+.card-sub { font-size:0.85rem; color:var(--muted); }
+
+/* KPI Cards */
+.kpi-grid { display:grid; grid-template-columns: repeat(4, 1fr); gap:16px; align-items:stretch; }
+.kpi { display:flex; flex-direction:column; justify-content:center; gap:6px; height:var(--kpi-height); padding:18px; }
+.kpi .label { font-size:0.85rem; color:var(--muted); }
+.kpi .value { font-size:1.45rem; font-weight:700; }
+.kpi .trend { font-size:0.85rem; color:var(--muted); }
+
+/* Responsive KPIs */
+@media (max-width:1200px) { .kpi-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width:900px) { .kpi-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width:600px) { .kpi-grid { grid-template-columns: 1fr; } .kpi { height:auto; } }
+
+/* Charts */
+.dashboard-grid { display:grid; grid-template-columns: 1fr 420px; gap:16px; align-items:start; }
+.chart-card { padding:12px; display:flex; flex-direction:column; gap:12px; }
+.chart-container { height:var(--chart-height); border-radius:8px; overflow:hidden; background:transparent; }
+.chart-container .chart-placeholder { height:100%; display:flex; align-items:center; justify-content:center; color:var(--muted); }
+.chart-small { height:220px; }
+
+/* Ensure charts resize smoothly */
+.chart-container, .chart-container canvas { transition:height 280ms ease, width 200ms ease; }
+
+/* Widgets area */
+.widgets-grid { display:grid; grid-template-columns: 1fr 320px; gap:16px; }
+.widget { padding:14px; border-radius:8px; background:var(--surface); border:1px solid var(--border); }
+.widget .widget-title { font-weight:600; font-size:0.95rem; }
+
+@media (max-width:1000px) { .dashboard-grid, .widgets-grid { grid-template-columns:1fr; } }
+
+/* Tables */
+.table-scroll { overflow:auto; border-radius:8px; }
+table { width:100%; border-collapse:collapse; min-width:720px; }
+table th, table td { padding:10px 12px; border-bottom:1px solid var(--border); text-align:left; font-size:0.95rem; }
+table thead th { background:transparent; font-weight:600; }
+
+/* Make tables horizontally scrollable on small screens */
+@media (max-width:700px) { .table-scroll { overflow-x:auto; } table { min-width:700px; } }
+
+/* Typography & Truncation */
+.truncate { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.wrap { white-space:normal; word-break:break-word; }
+h1,h2,h3,h4 { margin:0 0 8px 0; }
+
+/* Floating Action Button (FAB) */
+.fab { position:fixed; right:22px; bottom:22px; width:56px; height:56px; border-radius:50%; display:flex; align-items:center; justify-content:center; color:#fff; background:var(--accent); box-shadow:0 8px 30px rgba(11,99,214,0.2); z-index:1200; transition:transform 180ms ease; }
+.fab:active { transform:scale(0.98); }
+
+/* Ensure FAB doesn't overlap important content: add small offset to bottom when modals appear */
+body.modal-open .fab { bottom:92px; }
+
+/* Floating widget/hotspots */
+.badge { display:inline-flex; align-items:center; gap:8px; padding:6px 8px; background:var(--accent); color:#fff; border-radius:999px; font-size:0.85rem; }
+
+/* Buttons */
+.btn { display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:8px; border:1px solid var(--border); background:var(--surface); color:var(--text); cursor:pointer; }
+.btn-primary { background:var(--accent); color:#fff; border-color:transparent; }
+
+/* Shadows & hover */
+.card:hover, .widget:hover { box-shadow:0 12px 36px rgba(11,22,40,0.06); }
+
+/* Controls & inputs */
+.form-control { padding:10px 12px; border-radius:8px; border:1px solid var(--border); background:var(--surface); color:var(--text); }
+
+/* Theme variable fallbacks for elements that might not inherit */
+.navbar, .sidebar, .premium-header { background:var(--surface); color:var(--text); }
+
+/* Loading & empty states */
+.loading { display:flex; align-items:center; justify-content:center; padding:20px; }
+.skeleton { background:linear-gradient(90deg, rgba(0,0,0,0.03) 0%, rgba(0,0,0,0.06) 50%, rgba(0,0,0,0.03) 100%); height:12px; border-radius:6px; }
+
+/* Accessibility */
+.focus-ring:focus { outline:2px solid var(--accent); outline-offset:2px; }
+
+/* Misc tidy-ups to fix overflow, spacing and alignment */
+.align-center { display:flex; align-items:center; justify-content:center; }
+.gap-sm { gap:8px; }
+.gap-md { gap:16px; }
+
+/* Ensure analytics and forecast panels are visible */
+.analytics-panel .card, .forecast-panel { min-height:300px; }
+
+/* Ensure charts and canvases are not selectable/draggable */
+canvas { user-select:none; -webkit-user-select:none; -webkit-user-drag:none; }
+
+/* Final responsive tweaks */
+@media (max-width:480px) {
+    .container-fluid { padding:12px; }
+    .kpi .value { font-size:1.25rem; }
+    .fab { right:14px; bottom:14px; }
+}
+
+/* End of upgrades.css */
+
+</style>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.2/package/dist/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+/**
+ * Analytics Continuum Engine — extends dashboard data only (no data changes).
+ * Requires: schoolYears, grades, strandNames, enrolleesData, dropoutsData, repeatersData,
+ * teacherJHS, shsAcademic, shsTVL, strandEnrollment, jhsSubjects, getYearTotals, getStrandTotals
+ */
+(function () {
+    const CLASS_TARGET = 40;
+    const SEAT_CAPACITY = 45;
+
+    /** Ordinary least-squares linear regression on indexed series. */
+    function linearRegression(values) {
+        const n = values.length;
+        if (!n) return { slope: 0, intercept: 0, r2: 0, predict: () => 0, residuals: [], stdErr: 0 };
+        const points = values.map((y, x) => ({ x, y }));
+        if (n === 1) {
+            return { slope: 0, intercept: values[0], r2: 0, predict: () => values[0], residuals: [0], stdErr: 0 };
+        }
+        let sumX = 0, sumY = 0, sumXY = 0, sumX2 = 0, sumY2 = 0;
+        points.forEach(p => {
+            sumX += p.x; sumY += p.y; sumXY += p.x * p.y;
+            sumX2 += p.x * p.x; sumY2 += p.y * p.y;
+        });
+        const denom = n * sumX2 - sumX * sumX;
+        const slope = denom ? (n * sumXY - sumX * sumY) / denom : 0;
+        const intercept = (sumY - slope * sumX) / n;
+        const yMean = sumY / n;
+        let ssTot = 0, ssRes = 0;
+        const residuals = points.map(p => {
+            const fit = slope * p.x + intercept;
+            ssRes += (p.y - fit) ** 2;
+            ssTot += (p.y - yMean) ** 2;
+            return p.y - fit;
+        });
+        const r2 = ssTot ? Math.max(0, 1 - ssRes / ssTot) : 0;
+        const stdErr = n > 2 ? Math.sqrt(ssRes / (n - 2)) : 0;
+        return {
+            slope, intercept, r2,
+            predict: x => Math.max(0, Math.round(slope * x + intercept)),
+            residuals, stdErr
+        };
+    }
+
+    /** Grade-to-grade cohort survival across consecutive school years. */
+    function buildCohortSurvival() {
+        const cohorts = [];
+        for (let g = 0; g < grades.length - 1; g++) {
+            const transitions = [];
+            for (let yi = 0; yi < schoolYears.length - 1; yi++) {
+                const yr = schoolYears[yi];
+                const nextYr = schoolYears[yi + 1];
+                const base = enrolleesData[yr]?.[g] || 0;
+                const carried = enrolleesData[nextYr]?.[g + 1] || 0;
+                if (base > 0) {
+                    transitions.push({
+                        fromYear: yr,
+                        toYear: nextYr,
+                        base,
+                        carried,
+                        survivalPct: Math.min(100, (carried / base) * 100),
+                        attritionPct: Math.max(0, 100 - Math.min(100, (carried / base) * 100))
+                    });
+                }
+            }
+            if (transitions.length) {
+                const avgSurvival = transitions.reduce((a, t) => a + t.survivalPct, 0) / transitions.length;
+                cohorts.push({
+                    entryGrade: grades[g],
+                    nextGrade: grades[g + 1],
+                    transitions,
+                    avgSurvival
+                });
+            }
+        }
+        return cohorts;
+    }
+
+    function buildYearMetrics(year) {
+        const idx = schoolYears.indexOf(year);
+        const prevYear = idx > 0 ? schoolYears[idx - 1] : null;
+        const enrol = [...(enrolleesData[year] || Array(6).fill(0))];
+        const drop = [...(dropoutsData[year] || Array(6).fill(0))];
+        const rep = [...(repeatersData[year] || Array(6).fill(0))];
+        const tJHS = [...(teacherJHS[year] || Array(8).fill(0))];
+        const shsA = shsAcademic[idx] || 0;
+        const shsT = shsTVL[idx] || 0;
+        const totalEnrol = enrol.reduce((a, b) => a + b, 0);
+        const totalDrop = drop.reduce((a, b) => a + b, 0);
+        const totalRep = rep.reduce((a, b) => a + b, 0);
+        const totalTeachers = tJHS.reduce((a, b) => a + b, 0) + shsA + shsT;
+        const strandData = strandEnrollment[year] || {};
+        const strandTotals = strandNames.map(s => {
+            const v = strandData[s] || { g11: 0, g12: 0 };
+            return { name: s, g11: v.g11, g12: v.g12, total: v.g11 + v.g12 };
+        });
+        const shsEnrol = (enrol[4] || 0) + (enrol[5] || 0);
+        const classroomsNeeded = enrol.map(e => (e > 0 ? Math.ceil(e / CLASS_TARGET) : 0));
+        const seatCapacity = classroomsNeeded.map(c => c * SEAT_CAPACITY);
+        const seatUtil = enrol.map((e, i) => (seatCapacity[i] ? (e / seatCapacity[i]) * 100 : 0));
+        const classUtil = enrol.map((e, i) => (classroomsNeeded[i] ? (e / (classroomsNeeded[i] * CLASS_TARGET)) * 100 : 0));
+        const dropoutRates = enrol.map((e, i) => (e ? (drop[i] / e) * 100 : 0));
+        const repeaterRates = enrol.map((e, i) => (e ? (rep[i] / e) * 100 : 0));
+        const ratio = totalTeachers ? totalEnrol / totalTeachers : 0;
+        const retention = totalEnrol ? ((1 - totalDrop / totalEnrol) * 100) : 0;
+        const prevEnrol = prevYear ? (enrolleesData[prevYear]?.reduce((a, b) => a + b, 0) || 0) : null;
+        const enrolDelta = prevEnrol != null ? totalEnrol - prevEnrol : null;
+        const enrolDeltaPct = prevEnrol ? ((enrolDelta / prevEnrol) * 100) : null;
+        const subjectRatios = jhsSubjects.map((sub, i) => ({
+            subject: sub,
+            teachers: tJHS[i] || 0,
+            ratio: tJHS[i] ? (enrol.slice(0, 4).reduce((a, b) => a + b, 0) / tJHS[i]).toFixed(1) : '—'
+        }));
+        const highRiskGrades = grades.map((g, i) => ({
+            grade: g,
+            dropoutRate: dropoutRates[i],
+            repeaterRate: repeaterRates[i],
+            enrol: enrol[i],
+            riskScore: dropoutRates[i] * 0.6 + repeaterRates[i] * 0.4
+        })).sort((a, b) => b.riskScore - a.riskScore);
+        const overcrowded = grades.map((g, i) => ({
+            grade: g,
+            enrol: enrol[i],
+            classrooms: classroomsNeeded[i],
+            seatUtil: seatUtil[i],
+            overcapacity: seatUtil[i] > 100
+        })).filter(x => x.overcapacity || x.seatUtil > 95);
+        const lowSubjects = subjectRatios.filter(s => parseFloat(s.ratio) > 45);
+        const minEnrolIdx = enrol.indexOf(Math.min(...enrol.filter(e => e > 0).length ? enrol : [0]));
+        const lowestGrades = [...grades].sort((a, b) => enrol[grades.indexOf(a)] - enrol[grades.indexOf(b)]).slice(0, 2);
+        return {
+            year, prevYear, enrol, drop, rep, tJHS, shsA, shsT, totalEnrol, totalDrop, totalRep, totalTeachers,
+            strandTotals, shsEnrol, classroomsNeeded, seatCapacity, seatUtil, classUtil, dropoutRates,
+            repeaterRates, ratio, retention, prevEnrol, enrolDelta, enrolDeltaPct, subjectRatios,
+            highRiskGrades, overcrowded, lowSubjects, lowestGrades, minEnrolGrade: grades[minEnrolIdx] || '—'
+        };
+    }
+
+    function trendArrow(val) {
+        if (val == null || val === 0) return '<span class="ac-trend neutral">→</span>';
+        return val > 0 ? '<span class="ac-trend up">▲</span>' : '<span class="ac-trend down">▼</span>';
+    }
+
+    function riskBadge(level) {
+        const cls = level === 'high' ? 'risk-high' : level === 'medium' ? 'risk-medium' : 'risk-low';
+        return `<span class="ac-risk ${cls}">${level.toUpperCase()}</span>`;
+    }
+
+    function descriptiveNarrative(m) {
+        const low = m.lowestGrades.map(g => g).join(' and ');
+        const topStrand = [...m.strandTotals].sort((a, b) => b.total - a.total)[0];
+        const trend = m.enrolDeltaPct != null
+            ? ` Enrollment ${m.enrolDeltaPct >= 0 ? 'increased' : 'declined'} by ${Math.abs(m.enrolDeltaPct).toFixed(1)}% compared to the previous school year.`
+            : '';
+        return `SY ${m.year} recorded a total BOSY enrollment of <strong>${m.totalEnrol.toLocaleString()}</strong> students with ${low} showing comparatively lower grade-level distribution.${trend} SHS strand leadership is led by <strong>${topStrand?.name || 'N/A'}</strong> (${topStrand?.total || 0} students). Total dropouts: <strong>${m.totalDrop}</strong>; repeaters: <strong>${m.totalRep}</strong>. Student–teacher ratio: <strong>${m.ratio.toFixed(1)}:1</strong>. Average seat utilization: <strong>${(m.seatUtil.reduce((a, b) => a + b, 0) / 6).toFixed(1)}%</strong>.`;
+    }
+
+    function diagnosticNarrative(m) {
+        const hr = m.highRiskGrades[0];
+        const parts = [];
+        if (m.enrolDelta != null) {
+            parts.push(m.enrolDelta < 0
+                ? `Enrollment declined by ${Math.abs(m.enrolDelta)} students versus ${m.prevYear}, which may reflect demographic shifts or increased attrition in transitional grades.`
+                : `Enrollment grew by ${m.enrolDelta} students versus ${m.prevYear}, indicating strengthened intake or improved retention at entry grades.`);
+        }
+        if (hr) {
+            parts.push(`<strong>${hr.grade}</strong> presents the highest composite risk (dropout ${hr.dropoutRate.toFixed(1)}%, repeater ${hr.repeaterRate.toFixed(1)}%).`);
+        }
+        if (m.overcrowded.length) {
+            parts.push(`Overcapacity signals appear in ${m.overcrowded.map(o => o.grade).join(', ')} where seat utilization exceeds 95%.`);
+        }
+        if (m.lowSubjects.length) {
+            parts.push(`Teacher allocation pressure may exist in ${m.lowSubjects.map(s => s.subject).join(', ')} where student–teacher ratios exceed recommended thresholds.`);
+        }
+        return parts.join(' ') || 'Insufficient comparative data for diagnostic conclusions; add prior-year records for deeper analysis.';
+    }
+
+    function predictiveInsights(m) {
+        const hist = schoolYears.map(yr => ({
+            yr,
+            enrol: enrolleesData[yr]?.reduce((a, b) => a + b, 0) || 0,
+            drop: dropoutsData[yr]?.reduce((a, b) => a + b, 0) || 0
+        }));
+        const enrolSeries = hist.map(h => h.enrol);
+        const dropSeries = hist.map(h => h.drop);
+        const regEnrol = linearRegression(enrolSeries);
+        const regDrop = linearRegression(dropSeries);
+        const idx = schoolYears.indexOf(m.year);
+        const nextX = hist.length;
+        const forecastEnrol = regEnrol.predict(nextX);
+        const forecastEnrol2 = regEnrol.predict(nextX + 1);
+        const forecastDrop = regDrop.predict(nextX);
+        const growth = enrolSeries.length >= 2 && enrolSeries[enrolSeries.length - 2]
+            ? (enrolSeries[enrolSeries.length - 1] - enrolSeries[enrolSeries.length - 2]) / enrolSeries[enrolSeries.length - 2]
+            : regEnrol.slope / (m.totalEnrol || 1);
+        const strandForecast = m.strandTotals.map(s => {
+            const strandHist = schoolYears.map(yr => {
+                const v = strandEnrollment[yr]?.[s.name] || { g11: 0, g12: 0 };
+                return v.g11 + v.g12;
+            });
+            const regStrand = linearRegression(strandHist);
+            return {
+                name: s.name,
+                current: s.total,
+                projected: regStrand.predict(strandHist.length),
+                r2: regStrand.r2
+            };
+        });
+        const futureRatio = m.totalTeachers ? (forecastEnrol / m.totalTeachers).toFixed(1) : '—';
+        const classroomShortage = m.classroomsNeeded.reduce((a, b) => a + b, 0);
+        const projectedRooms = Math.ceil(forecastEnrol / CLASS_TARGET);
+        const band = regEnrol.stdErr * 1.96;
+        const comboLabels = [...hist.map(h => h.yr), 'Proj +1', 'Proj +2'];
+        const comboActual = [...enrolSeries, null, null];
+        const comboForecast = enrolSeries.map((_, i) => regEnrol.predict(i));
+        comboForecast.push(forecastEnrol, forecastEnrol2);
+        const comboUpper = comboForecast.map((v, i) => (i >= enrolSeries.length - 1 ? v + band : null));
+        const comboLower = comboForecast.map((v, i) => (i >= enrolSeries.length - 1 ? Math.max(0, v - band) : null));
+        const dropForecastLine = dropSeries.map((_, i) => regDrop.predict(i));
+        dropForecastLine.push(regDrop.predict(dropSeries.length));
+        return {
+            forecastEnrol, forecastEnrol2, forecastDrop, strandForecast, futureRatio,
+            classroomShortage, projectedRooms,
+            growthPct: (growth * 100).toFixed(1),
+            hist,
+            regEnrol, regDrop,
+            comboLabels, comboActual, comboForecast, comboUpper, comboLower,
+            dropForecastLine, dropSeries
+        };
+    }
+
+    /** Multi-condition prescription rules — all matching conditions fire. */
+    function prescriptiveActions(m, pred, cohorts) {
+        const hr = m.highRiskGrades[0];
+        const weakestCohort = [...cohorts].sort((a, b) => a.avgSurvival - b.avgSurvival)[0];
+        const avgCohortSurvival = cohorts.length
+            ? cohorts.reduce((a, c) => a + c.avgSurvival, 0) / cohorts.length
+            : 100;
+        const regSlopeUp = pred.regEnrol.slope > 0;
+        const regR2Strong = pred.regEnrol.r2 >= 0.65;
+
+        const rules = [
+            {
+                priority: 'high',
+                title: 'Retention intervention',
+                conditions: ['high_risk_grade', 'low_retention'],
+                match: hr && m.retention < 94,
+                text: `Deploy targeted retention in ${hr.grade} (risk score ${hr.riskScore.toFixed(1)}); school retention is ${m.retention.toFixed(1)}%.`
+            },
+            {
+                priority: 'high',
+                title: 'Cohort survival recovery',
+                conditions: ['weak_cohort', 'cohort_below_threshold'],
+                match: weakestCohort && weakestCohort.avgSurvival < 88,
+                text: `${weakestCohort.entryGrade}→${weakestCohort.nextGrade} cohort survival averages ${weakestCohort.avgSurvival.toFixed(1)}% — prioritize transition support and guidance counseling.`
+            },
+            {
+                priority: 'high',
+                title: 'Classroom balancing',
+                conditions: ['overcapacity', 'growth_forecast'],
+                match: m.overcrowded.length > 0 && parseFloat(pred.growthPct) > 0,
+                text: `Rebalance ${m.overcrowded.map(o => o.grade).join(', ')} while enrollment trend is +${pred.growthPct}% (linear slope ${pred.regEnrol.slope.toFixed(0)}/yr).`
+            },
+            {
+                priority: 'high',
+                title: 'Classroom balancing (urgent)',
+                conditions: ['overcapacity'],
+                match: m.overcrowded.length > 0,
+                text: `Rebalance sections in ${m.overcrowded.map(o => o.grade).join(', ')} or add teaching stations; seat utilization exceeds 95%.`
+            },
+            {
+                priority: 'medium',
+                title: 'Staffing plan',
+                conditions: ['teacher_load', 'ratio_pressure'],
+                match: m.lowSubjects.length > 0 && m.ratio > 35,
+                text: `Redeploy or hire for ${m.lowSubjects.map(s => s.subject).join(', ')}; overall ratio ${m.ratio.toFixed(1)}:1 exceeds target.`
+            },
+            {
+                priority: 'medium',
+                title: 'Staffing plan (subject)',
+                conditions: ['teacher_load'],
+                match: m.lowSubjects.length > 0,
+                text: `Review allocation for ${m.lowSubjects.map(s => s.subject).join(', ')} where ratios exceed thresholds.`
+            },
+            {
+                priority: 'medium',
+                title: 'Regression-based capacity plan',
+                conditions: ['positive_trend', 'model_confidence'],
+                match: regSlopeUp && regR2Strong,
+                text: `OLS forecast: ${pred.forecastEnrol.toLocaleString()} next SY (R²=${(pred.regEnrol.r2 * 100).toFixed(0)}%). Plan ${pred.projectedRooms} classrooms.`
+            },
+            {
+                priority: 'medium',
+                title: 'Capacity planning',
+                conditions: ['positive_trend'],
+                match: parseFloat(pred.growthPct) > 0,
+                text: `Prepare ${pred.projectedRooms} classrooms for projected enrollment (${pred.forecastEnrol.toLocaleString()} students).`
+            },
+            {
+                priority: 'medium',
+                title: 'Dropout containment',
+                conditions: ['dropout_forecast_rise', 'high_dropout_rate'],
+                match: pred.regDrop.slope > 0 && m.totalEnrol && (m.totalDrop / m.totalEnrol) > 0.02,
+                text: `Dropout regression projects ${pred.forecastDrop} next SY — intensify early-warning for at-risk sections.`
+            },
+            {
+                priority: 'low',
+                title: 'SHS strand strategy',
+                conditions: ['strand_demand_shift'],
+                match: pred.strandForecast.length >= 2,
+                text: (() => {
+                    const top = [...m.strandTotals].sort((a, b) => b.total - a.total)[0];
+                    const rising = [...pred.strandForecast].sort((a, b) => b.projected - a.projected)[0];
+                    return `Maintain ${top?.name || 'lead strand'} capacity; monitor ${rising?.name} (proj. ${rising?.projected}).`;
+                })()
+            },
+            {
+                priority: 'medium',
+                title: 'Data-driven monitoring',
+                conditions: ['baseline'],
+                match: true,
+                text: `Quarterly review of dropout/repeater KPIs for SY ${m.year}; mean cohort survival ${avgCohortSurvival.toFixed(1)}%.`
+            }
+        ];
+
+        const seen = new Set();
+        return rules.filter(r => {
+            if (!r.match || seen.has(r.title)) return false;
+            seen.add(r.title);
+            return true;
+        }).map(r => ({
+            priority: r.priority,
+            title: r.title,
+            text: r.text,
+            conditions: r.conditions
+        }));
+    }
+
+    window._acCharts = window._acCharts || [];
+
+    function destroyACCharts() {
+        (window._acCharts || []).forEach(c => { try { c.destroy(); } catch (e) {} });
+        window._acCharts = [];
+    }
+
+    function acChart(ctx, config) {
+        const ch = new Chart(ctx, config);
+        window._acCharts.push(ch);
+        return ch;
+    }
+
+    function chartOpts(tick) {
+        return {
+            responsive: true,
+            animation: { duration: 800 },
+            plugins: { legend: { labels: { color: tick } } },
+            scales: {
+                y: { ticks: { color: tick }, grid: { color: 'rgba(148,163,184,0.12)' } },
+                x: { ticks: { color: tick }, grid: { color: 'rgba(148,163,184,0.08)' } }
+            }
+        };
+    }
+
+    window.setGlobalSchoolYear = function (year) {
+        if (!schoolYears.includes(year)) return;
+        activeDashboardYear = year;
+        ['sySelector', 'acSYSelector', 'reportSYSelector'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el && el.value !== year) el.value = year;
+        });
+        const strandSel = document.getElementById('strandYearSelector');
+        if (strandSel && currentView === 'shsstrands') strandSel.value = year;
+        window.dispatchEvent(new CustomEvent('dmmhs:yearchange', { detail: { year } }));
+    };
+
+    window.buildYearMetrics = buildYearMetrics;
+    window.linearRegression = linearRegression;
+    window.buildCohortSurvival = buildCohortSurvival;
+    window.destroyACCharts = destroyACCharts;
+
+    window.renderAnalyticsContinuum = function (container) {
+        destroyACCharts();
+        container.className = 'view-enter ac-continuum';
+        const year = activeDashboardYear || schoolYears[schoolYears.length - 1];
+        const m = buildYearMetrics(year);
+        const cohorts = buildCohortSurvival();
+        const pred = predictiveInsights(m);
+        const actions = prescriptiveActions(m, pred, cohorts);
+        const tick = getComputedStyle(document.body).getPropertyValue('--chart-tick').trim() || '#CBD5E1';
+        const avgCohortSurvival = cohorts.length
+            ? (cohorts.reduce((a, c) => a + c.avgSurvival, 0) / cohorts.length).toFixed(1)
+            : '—';
+        const weakestCohort = cohorts.length
+            ? [...cohorts].sort((a, b) => a.avgSurvival - b.avgSurvival)[0]
+            : null;
+
+        container.innerHTML = `
+            <div class="ac-hero info-card">
+                <div class="dashboard-flex">
+                    <div>
+                        <h3><i class="fas fa-project-diagram"></i> Analytics Continuum</h3>
+                        <p class="ac-sub">Descriptive → Diagnostic → Predictive → Prescriptive · OLS Regression · Cohort Survival · Multi-Condition Rx</p>
+                    </div>
+                    <div><label class="ac-label">School Year</label><select id="acSYSelector" class="year-selector">${schoolYears.map(yr => `<option value="${yr}" ${yr === year ? 'selected' : ''}>${yr}</option>`).join('')}</select></div>
+                </div>
+            </div>
+
+            <section class="ac-section" id="acDesc">
+                <div class="ac-section-head"><span class="ac-badge badge-desc">1 · DESCRIPTIVE</span><h4>Descriptive Analytics</h4><p>What happened?</p></div>
+                <p class="ac-narrative">${descriptiveNarrative(m)}</p>
+                <div class="stat-grid ac-kpi-row">
+                    <div class="info-card kpi-card kpi-blue"><h4>BOSY Enrollment</h4><div class="value">${m.totalEnrol.toLocaleString()}</div>${trendArrow(m.enrolDelta)}</div>
+                    <div class="info-card kpi-card kpi-drop"><h4>Dropouts</h4><div class="value">${m.totalDrop}</div></div>
+                    <div class="info-card kpi-card kpi-rep"><h4>Repeaters</h4><div class="value">${m.totalRep}</div></div>
+                    <div class="info-card kpi-card kpi-teach"><h4>Student–Teacher</h4><div class="value">${m.ratio.toFixed(1)}:1</div></div>
+                    <div class="info-card kpi-card"><h4>Retention</h4><div class="value">${m.retention.toFixed(1)}%</div></div>
+                    <div class="info-card kpi-card"><h4>Avg Seat Util.</h4><div class="value">${(m.seatUtil.reduce((a,b)=>a+b,0)/6).toFixed(0)}%</div></div>
+                </div>
+                <div class="ac-grid-2">
+                    <div class="info-card"><h4>Grade-Level Enrollment</h4><canvas id="acDescGrade"></canvas></div>
+                    <div class="info-card"><h4>SHS Strand Distribution</h4><canvas id="acDescStrand"></canvas></div>
+                </div>
+                <div class="info-card"><h4>Utilization Summary</h4><div class="table-scroll"><table class="data-table"><thead><tr><th>Grade</th><th>Enrollment</th><th>Classrooms*</th><th>Seat Util.</th><th>Class Util.</th></tr></thead><tbody>
+                    ${grades.map((g,i)=>`<tr><td><b>${g}</b></td><td>${m.enrol[i]}</td><td>${m.classroomsNeeded[i]}</td><td>${m.seatUtil[i].toFixed(1)}%</td><td>${m.classUtil[i].toFixed(1)}%</td></tr>`).join('')}
+                </tbody></table></div><p class="ac-footnote">*Estimated at ${CLASS_TARGET} students/classroom, ${SEAT_CAPACITY} seats/room</p></div>
+            </section>
+
+            <section class="ac-section" id="acDiag">
+                <div class="ac-section-head"><span class="ac-badge badge-diag">2 · DIAGNOSTIC</span><h4>Diagnostic Analytics</h4><p>Why did it happen?</p></div>
+                <p class="ac-narrative">${diagnosticNarrative(m)}</p>
+                <div class="ac-grid-2">
+                    <div class="info-card"><h4>Dropout &amp; Repeater Rates by Grade</h4><canvas id="acDiagRates"></canvas></div>
+                    <div class="info-card"><h4>High-Risk Grades</h4><div class="table-scroll"><table class="data-table"><thead><tr><th>Grade</th><th>Dropout %</th><th>Repeater %</th><th>Risk</th></tr></thead><tbody>
+                        ${m.highRiskGrades.map(h=>`<tr><td>${h.grade}</td><td>${h.dropoutRate.toFixed(1)}%</td><td>${h.repeaterRate.toFixed(1)}%</td><td>${riskBadge(h.riskScore>8?'high':h.riskScore>4?'medium':'low')}</td></tr>`).join('')}
+                    </tbody></table></div></div>
+                </div>
+                <div class="info-card"><h4>JHS Teacher Allocation vs Load</h4><div class="table-scroll"><table class="data-table"><thead><tr><th>Subject</th><th>Teachers</th><th>Est. Ratio (JHS)</th></tr></thead><tbody>
+                    ${m.subjectRatios.map(s=>`<tr><td>${s.subject}</td><td>${s.teachers}</td><td>${s.ratio}:1</td></tr>`).join('')}
+                </tbody></table></div></div>
+            </section>
+
+            <section class="ac-section" id="acCohort">
+                <div class="ac-section-head"><span class="ac-badge badge-diag">COHORT</span><h4>Cohort Survival Analysis</h4><p>Grade-to-grade carry-forward across school years</p></div>
+                <div class="stat-grid ac-kpi-row">
+                    <div class="info-card kpi-card"><h4>Mean Cohort Survival</h4><div class="value">${avgCohortSurvival}%</div><span class="ac-hint">Across ${cohorts.length} grade transitions</span></div>
+                    <div class="info-card kpi-card"><h4>Weakest Transition</h4><div class="value">${weakestCohort ? weakestCohort.entryGrade + '→' + weakestCohort.nextGrade + ' (' + weakestCohort.avgSurvival.toFixed(1) + '%)' : '—'}</div></div>
+                </div>
+                <div class="ac-grid-2">
+                    <div class="info-card"><h4>Cohort Survival by Grade Transition (%)</h4><canvas id="acCohortSurvival"></canvas></div>
+                    <div class="info-card"><h4>Transition Detail</h4><div class="table-scroll"><table class="data-table"><thead><tr><th>Transition</th><th>SY Pair</th><th>Base</th><th>Carried</th><th>Survival</th></tr></thead><tbody>
+                        ${cohorts.flatMap(c => c.transitions.map(t =>
+                            `<tr><td>${c.entryGrade}→${c.nextGrade}</td><td>${t.fromYear.slice(2)}→${t.toYear.slice(2)}</td><td>${t.base}</td><td>${t.carried}</td><td>${t.survivalPct.toFixed(1)}%</td></tr>`
+                        )).join('')}
+                    </tbody></table></div></div>
+                </div>
+            </section>
+
+            <section class="ac-section" id="acPred">
+                <div class="ac-section-head"><span class="ac-badge badge-pred">3 · PREDICTIVE</span><h4>Predictive Analytics</h4><p>Linear regression forecasts with confidence bands</p></div>
+                <div class="stat-grid">
+                    <div class="info-card kpi-card"><h4>Next SY (OLS)</h4><div class="value">${pred.forecastEnrol.toLocaleString()}</div><span class="ac-hint">Slope ${pred.regEnrol.slope.toFixed(0)}/yr</span></div>
+                    <div class="info-card kpi-card"><h4>+2 SY (OLS)</h4><div class="value">${pred.forecastEnrol2.toLocaleString()}</div></div>
+                    <div class="info-card kpi-card kpi-drop"><h4>Dropout Forecast</h4><div class="value">${pred.forecastDrop}</div><span class="ac-hint">R² ${(pred.regDrop.r2 * 100).toFixed(0)}%</span></div>
+                    <div class="info-card kpi-card"><h4>Model Fit (Enrol)</h4><div class="value">R² ${(pred.regEnrol.r2 * 100).toFixed(0)}%</div><span class="ac-hint">OLS goodness of fit</span></div>
+                    <div class="info-card kpi-card"><h4>Future Ratio</h4><div class="value">${pred.futureRatio}:1</div></div>
+                </div>
+                <div class="info-card ac-combo-card">
+                    <h4>Combo Forecast — Enrollment (bars) + OLS trend + 95% band</h4>
+                    <p class="ac-footnote">Historical bars · regression line · projected interval (±1.96×SE)</p>
+                    <canvas id="acComboForecast"></canvas>
+                </div>
+                <div class="ac-grid-2">
+                    <div class="info-card"><h4>Enrollment vs Dropout Forecast (dual axis)</h4><canvas id="acPredEnrol"></canvas></div>
+                    <div class="info-card"><h4>SHS Strand Demand (OLS per strand)</h4><canvas id="acPredStrand"></canvas></div>
+                </div>
+            </section>
+
+            <section class="ac-section" id="acPres">
+                <div class="ac-section-head"><span class="ac-badge badge-pres">4 · PRESCRIPTIVE</span><h4>Prescriptive Analytics</h4><p>Dynamic multi-condition recommendations</p></div>
+                <div class="ac-actions">
+                    ${actions.map(a=>`<div class="info-card ac-action-card priority-${a.priority}">
+                        <div class="ac-action-head">${riskBadge(a.priority)} <strong>${a.title}</strong></div>
+                        <div class="ac-conditions">${(a.conditions||[]).map(c=>`<span class="ac-cond-tag">${c}</span>`).join('')}</div>
+                        <p>${a.text}</p>
+                    </div>`).join('')}
+                </div>
+            </section>
+        `;
+
+        document.getElementById('acSYSelector').onchange = e => {
+            setGlobalSchoolYear(e.target.value);
+            if (currentView === 'analytics') renderAnalyticsContinuum(container);
+        };
+
+        acChart(document.getElementById('acDescGrade').getContext('2d'), {
+            type: 'bar',
+            data: { labels: grades, datasets: [{ label: 'Enrollment', data: m.enrol, backgroundColor: 'rgba(56,189,248,0.75)', borderRadius: 6 }] },
+            options: chartOpts(tick)
+        });
+        acChart(document.getElementById('acDescStrand').getContext('2d'), {
+            type: 'doughnut',
+            data: {
+                labels: m.strandTotals.map(s => s.name),
+                datasets: [{ data: m.strandTotals.map(s => s.total), backgroundColor: ['#38BDF8','#FACC15','#A78BFA','#34D399','#FB923C','#F472B6','#94A3B8'] }]
+            },
+            options: { responsive: true, plugins: { legend: { position: 'bottom', labels: { color: tick } } } }
+        });
+        acChart(document.getElementById('acDiagRates').getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: grades,
+                datasets: [
+                    { label: 'Dropout %', data: m.dropoutRates, backgroundColor: 'rgba(248,113,113,0.8)' },
+                    { label: 'Repeater %', data: m.repeaterRates, backgroundColor: 'rgba(250,204,21,0.8)' }
+                ]
+            },
+            options: chartOpts(tick)
+        });
+
+        if (cohorts.length) {
+            acChart(document.getElementById('acCohortSurvival').getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: cohorts.map(c => `${c.entryGrade}→${c.nextGrade}`),
+                    datasets: [{
+                        label: 'Avg survival %',
+                        data: cohorts.map(c => c.avgSurvival),
+                        backgroundColor: cohorts.map(c =>
+                            c.avgSurvival < 85 ? 'rgba(248,113,113,0.85)' :
+                            c.avgSurvival < 92 ? 'rgba(250,204,21,0.8)' : 'rgba(52,211,153,0.8)'
+                        ),
+                        borderRadius: 6
+                    }]
+                },
+                options: {
+                    ...chartOpts(tick),
+                    scales: {
+                        ...chartOpts(tick).scales,
+                        y: { ...chartOpts(tick).scales.y, max: 100, ticks: { ...chartOpts(tick).scales.y.ticks, callback: v => v + '%' } }
+                    }
+                }
+            });
+        }
+
+        const histLen = pred.hist.length;
+        acChart(document.getElementById('acComboForecast').getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: pred.comboLabels,
+                datasets: [
+                    {
+                        type: 'bar',
+                        label: 'Actual enrollment',
+                        data: pred.comboActual,
+                        backgroundColor: 'rgba(56,189,248,0.55)',
+                        borderRadius: 4,
+                        order: 2
+                    },
+                    {
+                        type: 'line',
+                        label: 'OLS regression',
+                        data: pred.comboForecast,
+                        borderColor: '#FACC15',
+                        backgroundColor: 'transparent',
+                        borderWidth: 2,
+                        tension: 0.15,
+                        pointRadius: 3,
+                        order: 1
+                    },
+                    {
+                        type: 'line',
+                        label: 'Upper 95% band',
+                        data: pred.comboUpper,
+                        borderColor: 'rgba(52,211,153,0.5)',
+                        borderDash: [4, 4],
+                        fill: '+1',
+                        backgroundColor: 'rgba(52,211,153,0.08)',
+                        pointRadius: 0,
+                        order: 0
+                    },
+                    {
+                        type: 'line',
+                        label: 'Lower 95% band',
+                        data: pred.comboLower,
+                        borderColor: 'rgba(52,211,153,0.35)',
+                        borderDash: [4, 4],
+                        pointRadius: 0,
+                        order: 0
+                    }
+                ]
+            },
+            options: chartOpts(tick)
+        });
+
+        acChart(document.getElementById('acPredEnrol').getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: pred.comboLabels.slice(0, histLen + 1),
+                datasets: [
+                    {
+                        type: 'bar',
+                        label: 'Enrollment (actual)',
+                        data: [...pred.hist.map(h => h.enrol), pred.forecastEnrol],
+                        backgroundColor: 'rgba(56,189,248,0.6)',
+                        yAxisID: 'y',
+                        order: 2
+                    },
+                    {
+                        type: 'line',
+                        label: 'Dropouts (actual/OLS)',
+                        data: pred.dropForecastLine,
+                        borderColor: '#F87171',
+                        backgroundColor: 'rgba(248,113,113,0.12)',
+                        fill: true,
+                        tension: 0.25,
+                        yAxisID: 'y1',
+                        order: 1
+                    }
+                ]
+            },
+            options: {
+                ...chartOpts(tick),
+                scales: {
+                    y: { type: 'linear', position: 'left', ticks: { color: tick }, grid: { color: 'rgba(148,163,184,0.12)' } },
+                    y1: { type: 'linear', position: 'right', ticks: { color: tick }, grid: { drawOnChartArea: false } },
+                    x: { ticks: { color: tick }, grid: { color: 'rgba(148,163,184,0.08)' } }
+                }
+            }
+        });
+
+        acChart(document.getElementById('acPredStrand').getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: pred.strandForecast.map(s => s.name),
+                datasets: [
+                    { label: 'Current', data: pred.strandForecast.map(s => s.current), backgroundColor: 'rgba(56,189,248,0.6)' },
+                    { label: 'OLS projected', data: pred.strandForecast.map(s => s.projected), backgroundColor: 'rgba(250,204,21,0.7)' }
+                ]
+            },
+            options: chartOpts(tick)
+        });
+    };
+
+    let reportChartRef = null;
+
+    function buildReportHTML(year, tab) {
+        const m = buildYearMetrics(year);
+        const generated = new Date().toLocaleString('en-PH');
+        const header = `
+            <div class="report-header-print">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAgMTIwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IkRNTUhTIExvZ28iPgogIDxkZWZzPgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzFhNGY4YyIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwZDJmNWMiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxjaXJjbGUgY3g9IjYwIiBjeT0iNjAiIHI9IjU2IiBmaWxsPSJ1cmwoI2cpIiBzdHJva2U9IiNmNGM0MzAiIHN0cm9rZS13aWR0aD0iNCIvPgogIDxjaXJjbGUgY3g9IjYwIiBjeT0iNjAiIHI9IjQ0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgb3BhY2l0eT0iMC44NSIvPgogIDx0ZXh0IHg9IjYwIiB5PSI1MiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2Y0YzQzMCIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjIyIiBmb250LXdlaWdodD0iNzAwIj5ETU1IUzwvdGV4dD4KICA8dGV4dCB4PSI2MCIgeT0iNzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNmZmZmZmYiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSI5IiBsZXR0ZXItc3BhY2luZz0iMSI+RVNULiAyMDAxPC90ZXh0PgogIDx0ZXh0IHg9IjYwIiB5PSI4OCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2E4ZDRmZiIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjciPkZMT1JJREFCTEFOQ0E8L3RleHQ+Cjwvc3ZnPgo=" alt="Logo"/>
+                <h2>Diosdado Macapagal Memorial Highschool</h2>
+                <p>School Performance Report · SY ${year}</p>
+                <p style="font-size:0.75rem;">Generated: ${generated}</p>
+            </div>`;
+        let body = '';
+        if (tab === 'enrol' || tab === 'all') {
+            body += `<div class="info-card" style="margin-bottom:1rem;"><h4>1. BOSY Enrollment Report</h4>
+                <p>Total enrollment: <strong>${m.totalEnrol.toLocaleString()}</strong></p>
+                <div class="table-scroll"><table class="data-table"><thead><tr><th>Grade</th><th>Enrollment</th><th>% of Total</th></tr></thead><tbody>
+                ${grades.map((g,i)=>`<tr><td>${g}</td><td>${m.enrol[i]}</td><td>${m.totalEnrol?(m.enrol[i]/m.totalEnrol*100).toFixed(1):0}%</td></tr>`).join('')}
+                </tbody></table></div><canvas id="reportEnrolChart" height="120"></canvas></div>`;
+        }
+        if (tab === 'drop' || tab === 'all') {
+            body += `<div class="info-card" style="margin-bottom:1rem;"><h4>2. Dropout Report</h4>
+                <p>Total dropouts: <strong>${m.totalDrop}</strong> · Rate: <strong>${m.totalEnrol?(m.totalDrop/m.totalEnrol*100).toFixed(2):0}%</strong></p>
+                <div class="table-scroll"><table class="data-table"><thead><tr><th>Grade</th><th>Dropouts</th><th>Rate</th></tr></thead><tbody>
+                ${grades.map((g,i)=>`<tr><td>${g}</td><td>${m.drop[i]}</td><td>${m.dropoutRates[i].toFixed(1)}%</td></tr>`).join('')}
+                </tbody></table></div></div>`;
+        }
+        if (tab === 'rep' || tab === 'all') {
+            body += `<div class="info-card" style="margin-bottom:1rem;"><h4>3. Repeater Report</h4>
+                <p>Total repeaters: <strong>${m.totalRep}</strong> · Rate: <strong>${m.totalEnrol?(m.totalRep/m.totalEnrol*100).toFixed(2):0}%</strong></p>
+                <div class="table-scroll"><table class="data-table"><thead><tr><th>Grade</th><th>Repeaters</th><th>Rate</th></tr></thead><tbody>
+                ${grades.map((g,i)=>`<tr><td>${g}</td><td>${m.rep[i]}</td><td>${m.repeaterRates[i].toFixed(1)}%</td></tr>`).join('')}
+                </tbody></table></div></div>`;
+        }
+        if (tab === 'ratio' || tab === 'all') {
+            body += `<div class="info-card" style="margin-bottom:1rem;"><h4>4. Teacher–Student Ratio Report</h4>
+                <p>Overall ratio: <strong>${m.ratio.toFixed(1)}:1</strong> (${m.totalTeachers} teachers, ${m.totalEnrol} students)</p>
+                <div class="table-scroll"><table class="data-table"><thead><tr><th>Subject</th><th>Teachers</th><th>Est. Ratio</th></tr></thead><tbody>
+                ${m.subjectRatios.map(s=>`<tr><td>${s.subject}</td><td>${s.teachers}</td><td>${s.ratio}:1</td></tr>`).join('')}
+                <tr><td>SHS Academic</td><td>${m.shsA}</td><td>—</td></tr><tr><td>SHS TVL</td><td>${m.shsT}</td><td>—</td></tr>
+                </tbody></table></div></div>`;
+        }
+        if (tab === 'seat' || tab === 'all') {
+            body += `<div class="info-card" style="margin-bottom:1rem;"><h4>5. Seat &amp; Classroom Report</h4>
+                <div class="table-scroll"><table class="data-table"><thead><tr><th>Grade</th><th>Enrollment</th><th>Classrooms</th><th>Seats</th><th>Seat Util.</th><th>Status</th></tr></thead><tbody>
+                ${grades.map((g,i)=>`<tr><td>${g}</td><td>${m.enrol[i]}</td><td>${m.classroomsNeeded[i]}</td><td>${m.seatCapacity[i]}</td><td>${m.seatUtil[i].toFixed(1)}%</td><td>${m.seatUtil[i]>100?'Overcapacity':m.seatUtil[i]<70?'Underutilized':'Normal'}</td></tr>`).join('')}
+                </tbody></table></div></div>`;
+        }
+        if (tab === 'all') {
+            body += `<div class="insights-panel"><h4>Analytics Summary</h4>
+                <p>${descriptiveNarrative(m)}</p><p style="margin-top:0.5rem;">${diagnosticNarrative(m)}</p></div>`;
+        }
+        return header + body;
+    }
+
+    window.renderReportsContinuum = function (container) {
+        if (reportChartRef) try { reportChartRef.destroy(); } catch (e) {}
+        container.className = 'view-enter';
+        const year = activeDashboardYear || schoolYears[schoolYears.length - 1];
+        let activeTab = 'all';
+        container.innerHTML = `
+            <div class="dashboard-flex" style="margin-bottom:0.75rem;">
+                <h3><i class="fas fa-file-alt"></i> School Performance Reports</h3>
+                <select id="reportSYSelector" class="year-selector">${schoolYears.map(yr => `<option value="${yr}" ${yr === year ? 'selected' : ''}>${yr}</option>`).join('')}</select>
+            </div>
+            <div class="report-toolbar">
+                <button class="btn-primary btn-sm" id="btnReportPrint"><i class="fas fa-print"></i> Print</button>
+                <button class="btn-secondary btn-sm" id="btnReportPdf"><i class="fas fa-file-pdf"></i> PDF</button>
+                <button class="btn-secondary btn-sm" id="btnReportExcelFull"><i class="fas fa-file-excel"></i> Excel (All)</button>
+            </div>
+            <div class="report-tabs">
+                <button class="report-tab active" data-tab="all">Complete Report</button>
+                <button class="report-tab" data-tab="enrol">Enrollment</button>
+                <button class="report-tab" data-tab="drop">Dropouts</button>
+                <button class="report-tab" data-tab="rep">Repeaters</button>
+                <button class="report-tab" data-tab="ratio">Teacher Ratio</button>
+                <button class="report-tab" data-tab="seat">Seat &amp; Classroom</button>
+            </div>
+            <div class="report-print-area" id="reportPrintArea"></div>`;
+
+        function paintReport() {
+            const y = document.getElementById('reportSYSelector').value;
+            document.getElementById('reportPrintArea').innerHTML = buildReportHTML(y, activeTab);
+            const c = document.getElementById('reportEnrolChart');
+            if (c && (activeTab === 'all' || activeTab === 'enrol')) {
+                const m = buildYearMetrics(y);
+                const tick = getComputedStyle(document.body).getPropertyValue('--chart-tick');
+                if (reportChartRef) try { reportChartRef.destroy(); } catch (e) {}
+                reportChartRef = new Chart(c.getContext('2d'), {
+                    type: 'bar',
+                    data: { labels: grades, datasets: [{ label: 'Enrollment', data: m.enrol, backgroundColor: '#38BDF8' }] },
+                    options: { responsive: true, plugins: { legend: { labels: { color: tick } } } }
+                });
+            }
+        }
+
+        paintReport();
+        document.getElementById('reportSYSelector').onchange = e => {
+            setGlobalSchoolYear(e.target.value);
+            paintReport();
+        };
+        container.querySelectorAll('.report-tab').forEach(btn => {
+            btn.onclick = () => {
+                container.querySelectorAll('.report-tab').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                activeTab = btn.dataset.tab;
+                paintReport();
+            };
+        });
+        document.getElementById('btnReportPrint').onclick = () => {
+            const area = document.getElementById('reportPrintArea');
+            const w = window.open('', '_blank');
+            w.document.write(`<html><head><title>Report SY ${document.getElementById('reportSYSelector').value}</title><style>/* DMMHS Enterprise Dark Analytics Theme — visual only */
+:root {
+    --bg-page: #0F172A;
+    --sidebar-bg: #111827;
+    --card-bg: #1E293B;
+    --card-border: #334155;
+    --text-primary: #F8FAFC;
+    --text-secondary: #CBD5E1;
+    --accent-blue: #38BDF8;
+    --accent-gold: #FACC15;
+    --accent-glow: rgba(56, 189, 248, 0.22);
+    --input-bg: rgba(15, 23, 42, 0.65);
+    --main-bg: rgba(30, 41, 59, 0.55);
+    --badge-bg: rgba(51, 65, 85, 0.65);
+    --table-border: #334155;
+    --chart-grid: rgba(148, 163, 184, 0.15);
+    --chart-tick: #CBD5E1;
+    --dmmhs-navy: #0F172A;
+    --dmmhs-blue: #38BDF8;
+    --dmmhs-gold: #FACC15;
+    --dmmhs-accent: #38BDF8;
+    --toast-bg: rgba(17, 24, 39, 0.96);
+    --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.45);
+    --shadow-glow: 0 0 24px rgba(56, 189, 248, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+}
+
+body.app-active {
+    padding: 0.75rem;
+    background: var(--bg-page);
+    background-image:
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(56, 189, 248, 0.12), transparent),
+        radial-gradient(ellipse 60% 40% at 100% 100%, rgba(250, 204, 21, 0.06), transparent);
+    align-items: stretch;
+}
+
+body.app-active.light-theme {
+    --bg-page: #f1f5f9;
+    --sidebar-bg: #ffffff;
+    --card-bg: #ffffff;
+    --card-border: #cbd5e1;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --input-bg: #f8fafc;
+    --main-bg: rgba(255, 255, 255, 0.9);
+    --badge-bg: #e2e8f0;
+    --table-border: #e2e8f0;
+    --chart-tick: #334155;
+    background: linear-gradient(135deg, #e9f0fc 0%, #d9e2ef 100%);
+}
+
+/* Login */
+#loginPageWrap {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+#loginPageWrap.hidden { display: none; }
+.login-page-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(2, 132, 199, 0.95), rgba(15, 23, 42, 0.85)), radial-gradient(circle at top left, rgba(250, 204, 21, 0.16), transparent 30%), radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.18), transparent 35%);
+    background-color: #0074D9;
+}
+.login-page-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 35, 80, 0.18);
+    pointer-events: none;
+}
+@media (max-width: 900px) {
+    #loginPageWrap { justify-content: center; align-items: center; padding: 1rem; }
+}
+.glass {
+    background: var(--card-bg);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--card-border);
+    border-radius: 1.25rem;
+    box-shadow: var(--shadow-lg);
+}
+.login-container {
+    width: 100%;
+    max-width: 420px;
+    padding: 2rem 1.8rem;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+}
+#loginPageWrap .glass {
+    background: rgba(15, 23, 42, 0.75);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+}
+#loginPageWrap .logo-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 1.25rem;
+}
+#loginPageWrap .logo-area .brand-logo {
+    display: block;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    border: 3px solid var(--accent-gold);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+}
+#loginPageWrap .login-motto { color: var(--accent-gold); letter-spacing: 2px; font-weight: 700; margin: 0 0 0.5rem; }
+#loginPageWrap .logo-area h2 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    background: none;
+    -webkit-text-fill-color: unset;
+    text-align: center;
+    width: 100%;
+    margin: 0 0 0.35rem;
+}
+#loginPageWrap .login-sub { color: var(--text-secondary); }
+
+.input-group { margin-bottom: 1.3rem; position: relative; }
+.input-group i:not(.toggle-pwd) {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+}
+.input-group input {
+    width: 100%;
+    padding: 0.85rem 1rem 0.85rem 2.8rem;
+    background: var(--input-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    color: var(--text-primary);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.input-group input:focus {
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+}
+.login-btn {
+    width: 100%;
+    padding: 0.85rem;
+    background: linear-gradient(105deg, #0284c7, var(--accent-blue));
+    border: none;
+    border-radius: 0.75rem;
+    font-weight: 700;
+    color: #0f172a;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(56, 189, 248, 0.35);
+}
+.error-msg {
+    background: rgba(239, 68, 68, 0.15);
+    border-radius: 0.75rem;
+    padding: 0.5rem;
+    text-align: center;
+    margin-top: 1rem;
+    display: none;
+    color: #fca5a5;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+/* App layout */
+.app-wrapper {
+    display: none;
+    width: 100%;
+    max-width: 1680px;
+    margin: 0 auto;
+    gap: 0.75rem;
+    min-height: calc(100vh - 1.5rem);
+    align-items: stretch;
+}
+.app-wrapper[style*="flex"] { display: flex !important; }
+.dashboard-shell {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    gap: 0.75rem;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 280px;
+    flex-shrink: 0;
+    background: var(--sidebar-bg);
+    backdrop-filter: blur(20px);
+    border-radius: 1rem;
+    padding: 1rem 0.75rem;
+    border: 1px solid var(--card-border);
+    box-shadow: var(--shadow-lg);
+    transition: width 0.3s ease, padding 0.3s ease;
+    position: relative;
+}
+.sidebar.collapsed { width: 72px; }
+.sidebar.collapsed .sidebar-brand-text,
+.sidebar.collapsed .nav-item span,
+.sidebar.collapsed .sidebar-footer-text { display: none; }
+.sidebar.collapsed .nav-item { justify-content: center; padding: 0.75rem; }
+.sidebar-collapse-btn {
+    position: absolute;
+    top: 0.75rem;
+    right: -12px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid var(--card-border);
+    background: var(--card-bg);
+    color: var(--accent-blue);
+    cursor: pointer;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    box-shadow: var(--shadow-glow);
+}
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0.5rem 1rem;
+    border-bottom: 1px solid var(--card-border);
+    margin-bottom: 1rem;
+}
+.sidebar-logo {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent-gold);
+    box-shadow: 0 0 16px rgba(250, 204, 21, 0.35);
+}
+.brand-title {
+    font-size: 0.72rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--text-primary);
+    display: block;
+}
+.brand-sub {
+    font-size: 0.65rem;
+    color: var(--accent-blue);
+    display: block;
+    margin-top: 2px;
+}
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.7rem 1rem;
+    margin: 0.2rem 0;
+    border-radius: 0.65rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.25s ease;
+    font-weight: 500;
+    font-size: 0.88rem;
+    border: 1px solid transparent;
+}
+.nav-item i { width: 1.1rem; text-align: center; color: var(--accent-blue); opacity: 0.85; }
+.nav-item:hover {
+    background: var(--accent-glow);
+    color: var(--text-primary);
+    border-color: rgba(56, 189, 248, 0.2);
+    transform: translateX(3px);
+}
+.nav-item.active {
+    background: linear-gradient(90deg, rgba(56, 189, 248, 0.25), rgba(56, 189, 248, 0.08));
+    color: var(--text-primary);
+    border-color: rgba(56, 189, 248, 0.35);
+    box-shadow: inset 3px 0 0 var(--accent-blue);
+}
+.sidebar-footer-text {
+    font-size: 0.65rem;
+    color: var(--text-secondary);
+    text-align: center;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--card-border);
+}
+
+/* Premium header */
+.premium-header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.85rem 1.25rem;
+    background: linear-gradient(180deg, rgba(30, 41, 59, 0.95), rgba(17, 24, 39, 0.9));
+    border: 1px solid var(--card-border);
+    border-radius: 1rem;
+    backdrop-filter: blur(20px);
+    box-shadow: var(--shadow-lg);
+}
+.header-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+.header-datetime { display: flex; align-items: center; gap: 0.4rem; }
+.header-datetime i { color: var(--accent-blue); }
+.header-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+}
+.header-logo {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent-gold);
+    box-shadow: 0 0 28px rgba(250, 204, 21, 0.4), 0 8px 24px rgba(0, 0, 0, 0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.header-logo:hover {
+    transform: scale(1.06);
+    box-shadow: 0 0 36px rgba(250, 204, 21, 0.55), 0 12px 32px rgba(56, 189, 248, 0.25);
+}
+.header-school-name {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: 0.02em;
+    line-height: 1.25;
+    max-width: 420px;
+}
+.header-tagline {
+    font-size: 0.72rem;
+    color: var(--accent-blue);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.header-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.75rem;
+}
+.header-profile {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.35rem 0.75rem 0.35rem 0.35rem;
+    background: var(--badge-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 2rem;
+}
+.profile-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-blue), #0284c7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0f172a;
+    font-size: 0.9rem;
+}
+.profile-name { font-size: 0.78rem; font-weight: 600; color: var(--text-primary); display: block; }
+.profile-role { font-size: 0.65rem; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 0.05em; }
+.notif-btn { position: relative; }
+.notif-dot {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 8px;
+    height: 8px;
+    background: #ef4444;
+    border-radius: 50%;
+    border: 2px solid var(--sidebar-bg);
+}
+
+/* Main content */
+.main-content {
+    flex: 1;
+    background: var(--main-bg);
+    backdrop-filter: blur(14px);
+    border-radius: 1rem;
+    padding: 1.25rem;
+    border: 1px solid var(--card-border);
+    overflow-y: auto;
+    max-height: calc(100vh - 140px);
+    box-shadow: var(--shadow-lg);
+}
+.page-toolbar, .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--card-border);
+}
+.page-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.page-title::before {
+    content: '';
+    width: 4px;
+    height: 1.4rem;
+    background: linear-gradient(180deg, var(--accent-blue), var(--accent-gold));
+    border-radius: 2px;
+}
+
+.logout-side, .theme-toggle-btn {
+    background: var(--badge-bg);
+    border: 1px solid var(--card-border);
+    padding: 0.5rem 1rem;
+    border-radius: 0.65rem;
+    color: var(--text-primary);
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.8rem;
+    transition: all 0.2s;
+}
+.logout-side:hover, .theme-toggle-btn:hover {
+    border-color: var(--accent-blue);
+    box-shadow: var(--shadow-glow);
+}
+
+/* KPI cards */
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+.info-card {
+    background: linear-gradient(145deg, var(--card-bg), rgba(30, 41, 59, 0.8));
+    border-radius: 1rem;
+    padding: 1.15rem;
+    border: 1px solid var(--card-border);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s;
+    color: var(--text-primary);
+    position: relative;
+    overflow: hidden;
+}
+.info-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-blue), transparent);
+    opacity: 0.6;
+}
+.info-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-glow);
+    border-color: rgba(56, 189, 248, 0.35);
+}
+.kpi-card .kpi-icon {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    opacity: 0.2;
+    color: var(--accent-blue);
+}
+.kpi-card.kpi-drop::before { background: linear-gradient(90deg, #f87171, transparent); }
+.kpi-card.kpi-rep::before { background: linear-gradient(90deg, var(--accent-gold), transparent); }
+.kpi-card.kpi-teach::before { background: linear-gradient(90deg, #a78bfa, transparent); }
+.info-card h4 {
+    color: var(--accent-blue);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+.info-card .value {
+    font-size: 2.1rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    font-variant-numeric: tabular-nums;
+}
+.value-updated { animation: cardPop 0.45s cubic-bezier(0.2, 0.9, 0.4, 1.1); }
+@keyframes cardPop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); text-shadow: 0 0 12px rgba(56, 189, 248, 0.5); }
+    100% { transform: scale(1); }
+}
+
+/* Tables */
+.table-scroll { overflow-x: auto; border-radius: 0.75rem; margin-top: 0.5rem; }
+.data-table {
+    width: 100%;
+    color: var(--text-primary);
+    font-size: 0.85rem;
+    border-collapse: collapse;
+}
+.data-table thead th {
+    position: sticky;
+    top: 0;
+    background: #1e293b;
+    z-index: 2;
+    padding: 0.75rem 0.5rem;
+    font-weight: 600;
+    color: var(--accent-blue);
+    border-bottom: 2px solid var(--card-border);
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+}
+body.light-theme .data-table thead th { background: #e2e8f0; }
+.data-table td {
+    padding: 0.65rem 0.5rem;
+    border-bottom: 1px solid var(--table-border);
+}
+.data-table tbody tr { transition: background 0.15s; }
+.data-table tbody tr:hover { background: rgba(56, 189, 248, 0.08); }
+
+.badge-list { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.5rem; }
+.badge {
+    background: var(--badge-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 2rem;
+    padding: 0.3rem 0.9rem;
+    font-size: 0.75rem;
+    color: var(--text-primary);
+}
+canvas { max-height: 280px; width: 100%; margin-top: 0.75rem; }
+.year-selector, select {
+    background: var(--input-bg);
+    border-radius: 0.5rem;
+    padding: 0.45rem 1rem;
+    border: 1px solid var(--card-border);
+    color: var(--text-primary);
+    font-weight: 500;
+    cursor: pointer;
+}
+.mobile-menu-btn {
+    display: none;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    border-radius: 0.65rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+.dashboard-flex { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 1rem; gap: 1rem; }
+.action-group { display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; }
+.form-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.8rem; margin: 1rem 0; }
+.form-field label { font-size: 0.7rem; font-weight: 600; color: var(--text-secondary); }
+.form-field input, .form-field select {
+    background: var(--input-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 0.5rem;
+    padding: 0.45rem 0.6rem;
+    color: var(--text-primary);
+}
+.btn-primary {
+    background: linear-gradient(105deg, #0284c7, var(--accent-blue));
+    border: none;
+    padding: 0.55rem 1.1rem;
+    border-radius: 0.5rem;
+    color: #0f172a;
+    cursor: pointer;
+    font-weight: 700;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-primary:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(56, 189, 248, 0.35); }
+.btn-secondary {
+    background: var(--badge-bg);
+    border: 1px solid var(--card-border);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    color: var(--text-primary);
+    cursor: pointer;
+}
+.btn-icon {
+    background: var(--badge-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    cursor: pointer;
+    color: var(--text-primary);
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-icon:hover {
+    background: var(--accent-glow);
+    border-color: var(--accent-blue);
+    transform: scale(1.08);
+    color: var(--accent-blue);
+}
+.user-pill {
+    background: var(--badge-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 2rem;
+    padding: 0.35rem 0.85rem;
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+}
+.role-badge {
+    background: linear-gradient(105deg, #0284c7, var(--accent-blue));
+    border-radius: 20px;
+    padding: 2px 10px;
+    font-size: 0.65rem;
+    color: #0f172a;
+    font-weight: 700;
+}
+.insights-panel {
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.12), rgba(250, 204, 21, 0.06));
+    border: 1px solid var(--card-border);
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+.insights-panel h4 { color: var(--accent-gold); margin-bottom: 0.5rem; font-size: 0.85rem; }
+.insight-item { font-size: 0.82rem; color: var(--text-secondary); padding: 0.4rem 0; border-bottom: 1px solid var(--table-border); }
+.view-enter { animation: viewFadeIn 0.35s ease; }
+@keyframes viewFadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.toast-notify {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--toast-bg);
+    color: var(--text-primary);
+    padding: 12px 20px;
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-lg);
+    z-index: 2000;
+    font-size: 0.85rem;
+    border-left: 4px solid var(--accent-gold);
+    border: 1px solid var(--card-border);
+}
+.modal-overlay { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(6px); display: flex; align-items: center; justify-content: center; z-index: 3000; }
+.modal-card {
+    background: var(--card-bg);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    max-width: 480px;
+    width: 92%;
+    border: 1px solid var(--card-border);
+    color: var(--text-primary);
+    box-shadow: var(--shadow-lg);
+}
+.sync-badge { font-size: 0.68rem; background: var(--badge-bg); padding: 4px 10px; border-radius: 20px; color: var(--text-secondary); border: 1px solid var(--card-border); }
+.sync-badge.online { color: #4ade80; border-color: rgba(74, 222, 128, 0.4); }
+.editable-cell { cursor: pointer; border-bottom: 1px dashed var(--accent-gold); }
+.editable-cell:hover { background: var(--accent-glow); }
+.btn-danger { background: rgba(239, 68, 68, 0.2); border: 1px solid rgba(239, 68, 68, 0.4); padding: 0.35rem 0.8rem; border-radius: 0.5rem; color: #fca5a5; cursor: pointer; font-size: 0.75rem; }
+.btn-edit { background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.35); padding: 0.25rem 0.6rem; border-radius: 0.5rem; color: var(--accent-blue); cursor: pointer; font-size: 0.7rem; }
+hr { border: none; border-top: 1px solid var(--card-border); margin: 1rem 0; }
+.strand-chart-container { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem; }
+
+@media (max-width: 1100px) {
+    .premium-header { grid-template-columns: 1fr; text-align: center; }
+    .header-left { align-items: center; flex-direction: row; justify-content: center; flex-wrap: wrap; }
+    .header-right { justify-content: center; }
+    .header-school-name { font-size: 0.9rem; }
+}
+@media (max-width: 780px) {
+    .app-wrapper { flex-direction: column; }
+    .sidebar { width: 100%; display: none; }
+    .sidebar.show { display: block; }
+    .sidebar.collapsed { width: 100%; }
+    .mobile-menu-btn { display: inline-block; }
+    .main-content { max-height: none; }
+    .header-logo { width: 56px; height: 56px; }
+}
+/* Analytics Continuum */
+.ac-continuum .ac-hero { margin-bottom: 1rem; }
+.ac-sub { font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.25rem; }
+.ac-section { margin-bottom: 1.5rem; }
+.ac-section-head { margin-bottom: 0.75rem; }
+.ac-section-head h4 { font-size: 1.15rem; color: var(--text-primary); margin: 0.35rem 0 0.15rem; }
+.ac-section-head p { font-size: 0.75rem; color: var(--text-secondary); margin: 0; }
+.ac-badge { display: inline-block; font-size: 0.65rem; font-weight: 800; letter-spacing: 0.06em; padding: 0.25rem 0.65rem; border-radius: 2rem; margin-bottom: 0.35rem; }
+.badge-desc { background: rgba(56, 189, 248, 0.2); color: var(--accent-blue); border: 1px solid rgba(56, 189, 248, 0.35); }
+.badge-diag { background: rgba(167, 139, 250, 0.2); color: #c4b5fd; border: 1px solid rgba(167, 139, 250, 0.35); }
+.badge-pred { background: rgba(250, 204, 21, 0.15); color: var(--accent-gold); border: 1px solid rgba(250, 204, 21, 0.35); }
+.badge-pres { background: rgba(52, 211, 153, 0.15); color: #6ee7b7; border: 1px solid rgba(52, 211, 153, 0.35); }
+.ac-narrative { font-size: 0.88rem; line-height: 1.55; color: var(--text-secondary); margin-bottom: 1rem; padding: 0.85rem 1rem; background: rgba(15, 23, 42, 0.5); border-radius: 0.65rem; border-left: 3px solid var(--accent-blue); }
+.ac-grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-top: 1rem; }
+.ac-kpi-row { margin-bottom: 1rem; }
+.ac-trend.up { color: #4ade80; margin-left: 0.35rem; }
+.ac-trend.down { color: #f87171; margin-left: 0.35rem; }
+.ac-trend.neutral { color: var(--text-secondary); margin-left: 0.35rem; }
+.ac-risk { font-size: 0.6rem; font-weight: 800; padding: 0.15rem 0.45rem; border-radius: 4px; }
+.risk-high { background: rgba(239, 68, 68, 0.25); color: #fca5a5; }
+.risk-medium { background: rgba(250, 204, 21, 0.2); color: var(--accent-gold); }
+.risk-low { background: rgba(52, 211, 153, 0.2); color: #6ee7b7; }
+.ac-footnote { font-size: 0.65rem; color: var(--text-secondary); margin-top: 0.5rem; }
+.ac-hint { font-size: 0.65rem; color: var(--accent-blue); }
+.ac-actions { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.75rem; }
+.ac-action-card { border-left: 3px solid var(--accent-blue); }
+.ac-action-card.priority-high { border-left-color: #f87171; }
+.ac-action-card.priority-medium { border-left-color: var(--accent-gold); }
+.ac-action-head { margin-bottom: 0.4rem; font-size: 0.85rem; }
+.ac-label { font-size: 0.7rem; color: var(--text-secondary); display: block; margin-bottom: 0.2rem; }
+.ac-combo-card { margin-bottom: 1rem; }
+.ac-combo-card canvas { max-height: 320px; }
+.ac-conditions { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 0.5rem; }
+.ac-cond-tag { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; padding: 0.12rem 0.4rem; border-radius: 4px; background: rgba(148, 163, 184, 0.15); color: var(--text-secondary); border: 1px solid rgba(148, 163, 184, 0.2); }
+
+/* Executive overview */
+.exec-overview { background: linear-gradient(135deg, rgba(56, 189, 248, 0.12), rgba(250, 204, 21, 0.06)); border: 1px solid var(--card-border); border-radius: 1rem; padding: 1rem 1.25rem; margin-bottom: 1rem; }
+.exec-overview h3 { font-size: 1rem; color: var(--text-primary); margin-bottom: 0.35rem; }
+.exec-overview p { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5; }
+.global-slicer { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; padding: 0.85rem 1rem; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 0.75rem; margin-bottom: 1rem; }
+.global-slicer label { font-weight: 600; color: var(--accent-blue); font-size: 0.85rem; }
+
+/* Reports */
+.report-toolbar { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; align-items: center; }
+.report-print-area { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 1rem; padding: 1.25rem; }
+.report-header-print { text-align: center; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 2px solid var(--card-border); }
+.report-header-print img { width: 64px; height: 64px; border-radius: 50%; margin-bottom: 0.5rem; }
+.report-tabs { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
+.report-tab { padding: 0.45rem 0.9rem; border-radius: 2rem; border: 1px solid var(--card-border); background: var(--badge-bg); color: var(--text-secondary); cursor: pointer; font-size: 0.75rem; font-weight: 600; transition: all 0.2s; }
+.report-tab.active, .report-tab:hover { background: var(--accent-glow); color: var(--text-primary); border-color: var(--accent-blue); }
+
+@media print {
+    .sidebar, .premium-header, .page-toolbar, .top-bar, .mobile-menu-btn, .action-group, #loginPageWrap, .report-toolbar, .report-tabs { display: none !important; }
+    .app-wrapper { display: block !important; }
+    .main-content { max-height: none; }
+    .report-print-area { border: none; box-shadow: none; }
+}
+/* ========== THEME TRANSITIONS ========== */
+body,
+body *,
+.kpi-card,
+.info-card,
+.analytics-panel,
+.sidebar,
+.dashboard-shell,
+.premium-header,
+.data-table,
+.modal-card,
+.toast-notify,
+.sync-badge,
+.user-pill,
+.btn-primary,
+.btn-secondary,
+.logout-side,
+.theme-toggle-btn,
+.year-selector,
+.analytics-selector,
+input,
+select,
+button,
+.card,
+.modal-overlay {
+    transition: background-color 0.3s ease, 
+                color 0.3s ease, 
+                border-color 0.3s ease, 
+                box-shadow 0.3s ease,
+                background 0.3s ease;
+}
+
+/* Light Theme Specific Overrides */
+body.light-theme {
+    --bg-primary: #f8fafc;
+    --bg-secondary: #f1f5f9;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --card-bg: #ffffff;
+    --border-color: #e2e8f0;
+    --input-bg: #ffffff;
+    --chart-tick: #475569;
+}
+
+body.light-theme .kpi-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .info-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+}
+
+body.light-theme .sidebar {
+    background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+    border-right: 1px solid #e2e8f0;
+}
+
+body.light-theme .premium-header {
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+body.light-theme .data-table th {
+    background: #f1f5f9;
+    color: #0f172a;
+}
+
+body.light-theme .data-table td {
+    border-bottom: 1px solid #e2e8f0;
+}
+
+body.light-theme .variance-table th {
+    background: #f1f5f9;
+}
+
+body.light-theme .forecast-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+}
+
+body.light-theme .whatif-panel {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+}
+
+body.light-theme .progress-bar-bg {
+    background: #e2e8f0;
+}
+
+body.light-theme .analytics-selector {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    color: #0f172a;
+}
+
+body.light-theme .slider-group input {
+    background: #e2e8f0;
+}
+
+/* Dark Theme - already defined in your existing CSS, but ensure smoothness */
+body.dark-theme {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --card-bg: #1e293b;
+    --border-color: #334155;
+    --input-bg: #334155;
+    --chart-tick: #94a3b8;
+}
+
+/* Glassmorphism effect for cards in both themes */
+.kpi-card, .info-card, .analytics-panel {
+    backdrop-filter: blur(0px);
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+}
+
+body.light-theme .kpi-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-theme .kpi-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Theme Toggle Button Enhancement */
+.theme-toggle-btn {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.theme-toggle-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Chart colors adapt to theme */
+body.light-theme canvas {
+    filter: brightness(0.95);
+}
+
+body.dark-theme canvas {
+    filter: brightness(1);
+}
+
+/* Scrollbar styling for both themes */
+body.light-theme ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+body.light-theme ::-webkit-scrollbar-track {
+    background: #e2e8f0;
+}
+
+body.light-theme ::-webkit-scrollbar-thumb {
+    background: #94a3b8;
+    border-radius: 4px;
+}
+
+body.dark-theme ::-webkit-scrollbar-track {
+    background: #1e293b;
+}
+
+body.dark-theme ::-webkit-scrollbar-thumb {
+    background: #475569;
+    border-radius: 4px;
+}
+
+/* ==================== DMMHS DASHBOARD - UPGRADES STYLES ==================== */
+/* Purpose: polish visuals only — spacing, alignment, colors, responsive, charts */
+
+/* Use existing theme variables where possible; provide fallbacks */
+:root {
+    --accent: #0b63d6;
+    --accent-2: #06b6d4;
+    --bg: #f6f7fb;
+    --surface: #ffffff;
+    --text: #0f172a;
+    --muted: #6b7280;
+    --border: rgba(15,23,42,0.06);
+    --radius: 10px;
+    --kpi-height: 120px;
+    --chart-height: 300px;
+}
+
+/* Root containers */
+.container-fluid, .main-content { max-width:1400px; margin:0 auto; padding:20px; }
+.row { display:flex; flex-wrap:wrap; gap:16px; }
+.col { flex:1; min-width:0; }
+
+/* Cards & Panels */
+.card { background:var(--surface); border-radius:var(--radius); border:1px solid var(--border); box-shadow:0 6px 18px rgba(11,22,40,0.04); padding:16px; }
+.card-header { display:flex; justify-content:space-between; align-items:center; gap:12px; padding-bottom:8px; border-bottom:1px dashed rgba(0,0,0,0.03); margin-bottom:12px; }
+.card-title { font-size:1rem; font-weight:600; color:var(--text); }
+.card-sub { font-size:0.85rem; color:var(--muted); }
+
+/* KPI Cards */
+.kpi-grid { display:grid; grid-template-columns: repeat(4, 1fr); gap:16px; align-items:stretch; }
+.kpi { display:flex; flex-direction:column; justify-content:center; gap:6px; height:var(--kpi-height); padding:18px; }
+.kpi .label { font-size:0.85rem; color:var(--muted); }
+.kpi .value { font-size:1.45rem; font-weight:700; }
+.kpi .trend { font-size:0.85rem; color:var(--muted); }
+
+/* Responsive KPIs */
+@media (max-width:1200px) { .kpi-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width:900px) { .kpi-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width:600px) { .kpi-grid { grid-template-columns: 1fr; } .kpi { height:auto; } }
+
+/* Charts */
+.dashboard-grid { display:grid; grid-template-columns: 1fr 420px; gap:16px; align-items:start; }
+.chart-card { padding:12px; display:flex; flex-direction:column; gap:12px; }
+.chart-container { height:var(--chart-height); border-radius:8px; overflow:hidden; background:transparent; }
+.chart-container .chart-placeholder { height:100%; display:flex; align-items:center; justify-content:center; color:var(--muted); }
+.chart-small { height:220px; }
+
+/* Ensure charts resize smoothly */
+.chart-container, .chart-container canvas { transition:height 280ms ease, width 200ms ease; }
+
+/* Widgets area */
+.widgets-grid { display:grid; grid-template-columns: 1fr 320px; gap:16px; }
+.widget { padding:14px; border-radius:8px; background:var(--surface); border:1px solid var(--border); }
+.widget .widget-title { font-weight:600; font-size:0.95rem; }
+
+@media (max-width:1000px) { .dashboard-grid, .widgets-grid { grid-template-columns:1fr; } }
+
+/* Tables */
+.table-scroll { overflow:auto; border-radius:8px; }
+table { width:100%; border-collapse:collapse; min-width:720px; }
+table th, table td { padding:10px 12px; border-bottom:1px solid var(--border); text-align:left; font-size:0.95rem; }
+table thead th { background:transparent; font-weight:600; }
+
+/* Make tables horizontally scrollable on small screens */
+@media (max-width:700px) { .table-scroll { overflow-x:auto; } table { min-width:700px; } }
+
+/* Typography & Truncation */
+.truncate { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.wrap { white-space:normal; word-break:break-word; }
+h1,h2,h3,h4 { margin:0 0 8px 0; }
+
+/* Floating Action Button (FAB) */
+.fab { position:fixed; right:22px; bottom:22px; width:56px; height:56px; border-radius:50%; display:flex; align-items:center; justify-content:center; color:#fff; background:var(--accent); box-shadow:0 8px 30px rgba(11,99,214,0.2); z-index:1200; transition:transform 180ms ease; }
+.fab:active { transform:scale(0.98); }
+
+/* Ensure FAB doesn't overlap important content: add small offset to bottom when modals appear */
+body.modal-open .fab { bottom:92px; }
+
+/* Floating widget/hotspots */
+.badge { display:inline-flex; align-items:center; gap:8px; padding:6px 8px; background:var(--accent); color:#fff; border-radius:999px; font-size:0.85rem; }
+
+/* Buttons */
+.btn { display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:8px; border:1px solid var(--border); background:var(--surface); color:var(--text); cursor:pointer; }
+.btn-primary { background:var(--accent); color:#fff; border-color:transparent; }
+
+/* Shadows & hover */
+.card:hover, .widget:hover { box-shadow:0 12px 36px rgba(11,22,40,0.06); }
+
+/* Controls & inputs */
+.form-control { padding:10px 12px; border-radius:8px; border:1px solid var(--border); background:var(--surface); color:var(--text); }
+
+/* Theme variable fallbacks for elements that might not inherit */
+.navbar, .sidebar, .premium-header { background:var(--surface); color:var(--text); }
+
+/* Loading & empty states */
+.loading { display:flex; align-items:center; justify-content:center; padding:20px; }
+.skeleton { background:linear-gradient(90deg, rgba(0,0,0,0.03) 0%, rgba(0,0,0,0.06) 50%, rgba(0,0,0,0.03) 100%); height:12px; border-radius:6px; }
+
+/* Accessibility */
+.focus-ring:focus { outline:2px solid var(--accent); outline-offset:2px; }
+
+/* Misc tidy-ups to fix overflow, spacing and alignment */
+.align-center { display:flex; align-items:center; justify-content:center; }
+.gap-sm { gap:8px; }
+.gap-md { gap:16px; }
+
+/* Ensure analytics and forecast panels are visible */
+.analytics-panel .card, .forecast-panel { min-height:300px; }
+
+/* Ensure charts and canvases are not selectable/draggable */
+canvas { user-select:none; -webkit-user-select:none; -webkit-user-drag:none; }
+
+/* Final responsive tweaks */
+@media (max-width:480px) {
+    .container-fluid { padding:12px; }
+    .kpi .value { font-size:1.25rem; }
+    .fab { right:14px; bottom:14px; }
+}
+
+/* End of upgrades.css */
+</style></head><body>${area.innerHTML}</body></html>`);
+            w.document.close();
+            w.print();
+        };
+        document.getElementById('btnReportPdf').onclick = () => {
+            if (typeof html2pdf === 'undefined') { showToast('PDF library loading…'); return; }
+            const el = document.getElementById('reportPrintArea');
+            html2pdf().set({ margin: 10, filename: `DMMHS_Report_${document.getElementById('reportSYSelector').value}.pdf`, html2canvas: { scale: 2 }, jsPDF: { unit: 'mm', format: 'a4' } }).from(el).save();
+            showToast('PDF export started', 'success');
+        };
+        document.getElementById('btnReportExcelFull').onclick = () => {
+            if (typeof XLSX === 'undefined') return;
+            const y = document.getElementById('reportSYSelector').value;
+            const m = buildYearMetrics(y);
+            const wb = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(grades.map((g, i) => ({
+                Grade: g, Enrollment: m.enrol[i], Dropouts: m.drop[i], Repeaters: m.rep[i]
+            }))), 'Enrollment');
+            XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(m.subjectRatios.map(s => ({
+                Subject: s.subject, Teachers: s.teachers, Ratio: s.ratio
+            }))), 'Teachers');
+            XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(grades.map((g, i) => ({
+                Grade: g, Classrooms: m.classroomsNeeded[i], Seats: m.seatCapacity[i], SeatUtilPct: m.seatUtil[i].toFixed(1)
+            }))), 'Classrooms');
+            XLSX.writeFile(wb, `DMMHS_FullReport_${y.replace(/-/g, '_')}.xlsx`);
+            showToast('Excel exported', 'success');
+        };
+    };
+
+})();
+
+</script>
+</head>
+<body class="dark-theme">
+
+<div id="loginPageWrap">
+    <div class="login-page-bg" role="img" aria-label="Diosdado Macapagal Memorial Highschool One Team One Dream school banner"></div>
+    <div class="login-page-overlay" aria-hidden="true"></div>
+    <div id="loginCard" class="glass login-container">
+    <div class="logo-area">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAgMTIwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IkRNTUhTIExvZ28iPgogIDxkZWZzPgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzFhNGY4YyIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwZDJmNWMiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxjaXJjbGUgY3g9IjYwIiBjeT0iNjAiIHI9IjU2IiBmaWxsPSJ1cmwoI2cpIiBzdHJva2U9IiNmNGM0MzAiIHN0cm9rZS13aWR0aD0iNCIvPgogIDxjaXJjbGUgY3g9IjYwIiBjeT0iNjAiIHI9IjQ0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgb3BhY2l0eT0iMC44NSIvPgogIDx0ZXh0IHg9IjYwIiB5PSI1MiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2Y0YzQzMCIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjIyIiBmb250LXdlaWdodD0iNzAwIj5ETU1IUzwvdGV4dD4KICA8dGV4dCB4PSI2MCIgeT0iNzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNmZmZmZmYiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSI5IiBsZXR0ZXItc3BhY2luZz0iMSI+RVNULiAyMDAxPC90ZXh0PgogIDx0ZXh0IHg9IjYwIiB5PSI4OCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2E4ZDRmZiIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjciPkZMT1JJREFCTEFOQ0E8L3RleHQ+Cjwvc3ZnPgo=" alt="DMMHS Logo" class="brand-logo" />
+        <p class="login-motto">ONE TEAM · ONE DREAM</p>
+        <h2>Diosdado Macapagal Memorial Highschool</h2>
+        <p class="login-sub">School Performance Monitoring Dashboard</p>
+        <p class="login-sub">Floridablanca, Pampanga · Est. 2001</p>
+    </div>
+    <form id="loginForm">
+        <div class="input-group"><i class="fas fa-envelope"></i><input type="email" id="emailInput" placeholder="Email address" autocomplete="email"></div>
+        <div class="input-group"><i class="fas fa-lock"></i><input type="password" id="passwordInput" placeholder="Password"><i class="fas fa-eye-slash toggle-pwd" id="togglePwdIcon"></i></div>
+        <div class="options"><label class="remember"><input type="checkbox" id="rememberCheck"> <span>Remember me</span></label><a href="#" id="forgotLink" style="color:var(--text-secondary);">Forgot?</a></div>
+        <button type="submit" class="login-btn"><i class="fas fa-arrow-right-to-bracket"></i> Sign In</button>
+        <div id="loginError" class="error-msg"></div>
+    </form>
+    <footer style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+        <span style="font-size:0.68rem;">admin@dmmhs.edu.ph / admin123 · editor@dmmhs.edu.ph / editor123 · viewer@dmmhs.edu.ph / viewer123</span>
+        <button id="loginThemeToggle" class="theme-toggle-btn" style="padding: 0.3rem 0.9rem;"><i class="fas fa-moon"></i> Theme</button>
+    </footer>
+    </div>
+</div>
+
+<div id="appWrapper" class="app-wrapper" style="display:none;">
+    <button class="mobile-menu-btn" id="mobileMenuToggle"><i class="fas fa-bars"></i> Menu</button>
+    <div class="sidebar" id="sidebar">
+        <button type="button" class="sidebar-collapse-btn" id="sidebarCollapse" title="Collapse sidebar" aria-label="Collapse sidebar"><i class="fas fa-chevron-left"></i></button>
+        <div class="sidebar-brand">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAgMTIwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IkRNTUhTIExvZ28iPgogIDxkZWZzPgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzFhNGY4YyIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwZDJmNWMiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxjaXJjbGUgY3g9IjYwIiBjeT0iNjAiIHI9IjU2IiBmaWxsPSJ1cmwoI2cpIiBzdHJva2U9IiNmNGM0MzAiIHN0cm9rZS13aWR0aD0iNCIvPgogIDxjaXJjbGUgY3g9IjYwIiBjeT0iNjAiIHI9IjQ0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgb3BhY2l0eT0iMC44NSIvPgogIDx0ZXh0IHg9IjYwIiB5PSI1MiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2Y0YzQzMCIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjIyIiBmb250LXdlaWdodD0iNzAwIj5ETU1IUzwvdGV4dD4KICA8dGV4dCB4PSI2MCIgeT0iNzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNmZmZmZmYiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSI5IiBsZXR0ZXItc3BhY2luZz0iMSI+RVNULiAyMDAxPC90ZXh0PgogIDx0ZXh0IHg9IjYwIiB5PSI4OCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2E4ZDRmZiIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjciPkZMT1JJREFCTEFOQ0E8L3RleHQ+Cjwvc3ZnPgo=" alt="Official School Logo" class="sidebar-logo" />
+            <div class="sidebar-brand-text">
+                <span class="brand-title">Diosdado Macapagal Memorial Highschool</span>
+                <span class="brand-sub">Analytics Portal</span>
+            </div>
+        </div>
+        <div class="nav-item active" data-view="dashboard"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></div>
+        <div class="nav-item" data-view="enrollment"><i class="fas fa-user-graduate"></i><span>Enrollment</span></div>
+        <div class="nav-item" data-view="dropouts"><i class="fas fa-user-slash"></i><span>Dropouts</span></div>
+        <div class="nav-item" data-view="repeaters"><i class="fas fa-redo-alt"></i><span>Repeaters</span></div>
+        <div class="nav-item" data-view="teachers"><i class="fas fa-chalkboard-user"></i><span>Teachers</span></div>
+        <div class="nav-item" data-view="shsstrands"><i class="fas fa-layer-group"></i><span>SHS Strands</span></div>
+        <div class="nav-item" data-view="reports"><i class="fas fa-chart-line"></i><span>Reports</span></div>
+        <div class="nav-item" data-view="analytics"><i class="fas fa-project-diagram"></i><span>Analytics Continuum</span></div>
+        <div class="nav-item" data-view="logs"><i class="fas fa-history"></i><span>Activity Logs</span></div>
+        <div class="nav-item" data-view="dataAdmin"><i class="fas fa-database"></i><span>Data Admin</span></div>
+        <div class="nav-item" data-view="users"><i class="fas fa-users-cog"></i><span>User Management</span></div>
+        <div class="nav-item" data-view="settings"><i class="fas fa-cog"></i><span>Settings</span></div>
+        <p class="sidebar-footer-text">ONE TEAM · ONE DREAM · Est. 2001</p>
+        <div style="margin-top: 1rem;"><button id="logoutSidebarBtn" class="logout-side" style="width:100%;"><i class="fas fa-sign-out-alt"></i> Logout</button></div>
+    </div>
+    <div class="dashboard-shell">
+        <header class="premium-header">
+            <div class="header-left">
+                <span class="header-datetime"><i class="fas fa-calendar-day"></i> <span id="headerDate">—</span></span>
+                <span class="header-datetime"><i class="fas fa-clock"></i> <span id="headerClock">—</span></span>
+            </div>
+            <div class="header-center">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAgMTIwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IkRNTUhTIExvZ28iPgogIDxkZWZzPgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzFhNGY4YyIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwZDJmNWMiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxjaXJjbGUgY3g9IjYwIiBjeT0iNjAiIHI9IjU2IiBmaWxsPSJ1cmwoI2cpIiBzdHJva2U9IiNmNGM0MzAiIHN0cm9rZS13aWR0aD0iNCIvPgogIDxjaXJjbGUgY3g9IjYwIiBjeT0iNjAiIHI9IjQ0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgb3BhY2l0eT0iMC44NSIvPgogIDx0ZXh0IHg9IjYwIiB5PSI1MiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2Y0YzQzMCIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjIyIiBmb250LXdlaWdodD0iNzAwIj5ETU1IUzwvdGV4dD4KICA8dGV4dCB4PSI2MCIgeT0iNzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNmZmZmZmYiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSI5IiBsZXR0ZXItc3BhY2luZz0iMSI+RVNULiAyMDAxPC90ZXh0PgogIDx0ZXh0IHg9IjYwIiB5PSI4OCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2E4ZDRmZiIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjciPkZMT1JJREFCTEFOQ0E8L3RleHQ+Cjwvc3ZnPgo=" alt="Diosdado Macapagal Memorial Highschool Official Logo" class="header-logo" />
+                <div class="header-titles">
+                    <h1 class="header-school-name">Diosdado Macapagal Memorial Highschool</h1>
+                    <p class="header-tagline">School Performance Monitoring Dashboard</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <button type="button" id="btnNotif" class="btn-icon notif-btn" title="Notifications" aria-label="Notifications"><i class="fas fa-bell"></i><span class="notif-dot"></span></button>
+                <div class="header-profile" id="headerProfile">
+                    <div class="profile-avatar"><i class="fas fa-user-shield"></i></div>
+                    <div class="profile-meta">
+                        <span class="profile-name" id="profileName">Guest</span>
+                        <span class="profile-role" id="profileRole">VIEWER</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+    <div class="main-content" id="mainContent">
+        <div class="page-toolbar">
+            <h2 class="page-title" id="currentPageTitle">Dashboard</h2>
+            <div class="action-group">
+                <span id="syncBadge" class="sync-badge"><i class="fas fa-database"></i> Local mode</span>
+                <span id="userPill" class="user-pill">Guest</span>
+                <button id="btnPrint" class="btn-icon" title="Print view"><i class="fas fa-print"></i></button>
+                <button id="btnExportJson" class="btn-icon" title="Export JSON"><i class="fas fa-file-export"></i></button>
+                <button id="btnExportExcel" class="btn-icon" title="Export Excel"><i class="fas fa-file-excel"></i></button>
+                <button id="dashboardThemeToggle" class="theme-toggle-btn"><i class="fas fa-palette"></i> <span id="themeToggleLabel">Dark</span></button>
+                <button id="logoutTopBtn" class="logout-side"><i class="fas fa-sign-out-alt"></i> Exit</button>
+            </div>
+        </div>
+        <div id="dynamicView">Loading...</div>
+    </div>
+    </div>
+</div>
+
+<script>
+    // ---------- API & AUTH (backend with localStorage fallback) ----------
+    const API_BASE = (window.location.protocol === 'file:') ? '' : window.location.origin;
+    const IS_OFFLINE_FILE = window.location.protocol === 'file:';
+    let authToken = localStorage.getItem('dmmhs_auth_token') || null;
+    let currentUser = JSON.parse(localStorage.getItem('dmmhs_current_user') || 'null') || { email: '', role: 'viewer', name: '' };
+    let activityLogs = [];
+    let apiOnline = false;
+
+    function canEdit() { return currentUser.role === 'admin' || currentUser.role === 'editor'; }
+    function isAdmin() { return currentUser.role === 'admin'; }
+
+    function showToast(msg, type = 'info') {
+        const toast = document.createElement('div');
+        toast.className = 'toast-notify';
+        toast.innerHTML = `<i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-info-circle'}"></i> ${msg}`;
+        document.body.appendChild(toast);
+        setTimeout(() => { toast.classList.add('fade-out'); setTimeout(() => toast.remove(), 500); }, 3000);
+    }
+
+    function showConfirm(msg, onConfirm) {
+        const modal = document.createElement('div');
+        modal.className = 'modal-overlay';
+        modal.innerHTML = `<div class="modal-card"><h3>Confirm</h3><p>${msg}</p><div style="display:flex;gap:1rem;margin-top:1rem;"><button id="confirmYes" class="btn-primary">Yes</button><button id="confirmNo" class="btn-secondary">Cancel</button></div></div>`;
+        document.body.appendChild(modal);
+        modal.querySelector('#confirmYes').onclick = () => { onConfirm(); modal.remove(); };
+        modal.querySelector('#confirmNo').onclick = () => modal.remove();
+    }
+
+    function updateUserPill() {
+        const pill = document.getElementById('userPill');
+        const name = currentUser.name || currentUser.email || 'Guest';
+        const role = (currentUser.role || 'viewer').toUpperCase();
+        if (pill) pill.textContent = currentUser.email ? `${name} (${currentUser.role})` : 'Guest';
+        const pn = document.getElementById('profileName');
+        const pr = document.getElementById('profileRole');
+        if (pn) pn.textContent = name;
+        if (pr) pr.textContent = role;
+    }
+
+    function updateSyncBadge(online, msg) {
+        const el = document.getElementById('syncBadge');
+        if (!el) return;
+        el.className = 'sync-badge' + (online ? ' online' : '');
+        el.innerHTML = online ? `<i class="fas fa-cloud"></i> ${msg}` : `<i class="fas fa-database"></i> ${msg}`;
+    }
+
+    function addLog(action, details) {
+        const log = { id: Date.now(), user: currentUser.email || 'system', role: currentUser.role || 'viewer', action, details, timestamp: new Date().toISOString() };
+        activityLogs.unshift(log);
+        if (activityLogs.length > 200) activityLogs.pop();
+        if (authToken && apiOnline) {
+            fetch(`${API_BASE}/api/logs`, { method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${authToken}` }, body: JSON.stringify({ action, details }) }).catch(() => {});
+        }
+    }
+
+    async function apiFetch(path, options = {}) {
+        const headers = { 'Content-Type': 'application/json', ...(options.headers || {}) };
+        if (authToken) headers.Authorization = `Bearer ${authToken}`;
+        const res = await fetch(`${API_BASE}${path}`, { ...options, headers });
+        if (!res.ok) {
+            const err = await res.json().catch(() => ({}));
+            throw new Error(err.error || res.statusText);
+        }
+        return res.json();
+    }
+
+    async function syncToServer() {
+        if (!authToken || !canEdit()) return;
+        try {
+            await apiFetch('/api/data', { method: 'PUT', body: JSON.stringify(getStoragePayload()) });
+            updateSyncBadge(true, `Synced ${new Date().toLocaleTimeString()}`);
+            apiOnline = true;
+        } catch (e) {
+            updateSyncBadge(false, 'Offline — saved locally');
+        }
+    }
+
+    async function loadFromServer() {
+        if (!authToken) return false;
+        try {
+            const data = await apiFetch('/api/data');
+            applyStoragePayload(data);
+            apiOnline = true;
+            updateSyncBadge(true, `Loaded ${new Date().toLocaleTimeString()}`);
+            return true;
+        } catch {
+            apiOnline = false;
+            updateSyncBadge(false, 'Local mode');
+            return false;
+        }
+    }
+
+    function getStoragePayload() {
+        return { schoolYears, enrolleesData, repeatersData, dropoutsData, teacherJHS, shsAcademic, shsTVL, strandEnrollment, activityLogs };
+    }
+
+    function applyStoragePayload(data) {
+        if (!data) return;
+        schoolYears = data.schoolYears || schoolYears;
+        enrolleesData = data.enrolleesData || enrolleesData;
+        repeatersData = data.repeatersData || repeatersData;
+        dropoutsData = data.dropoutsData || dropoutsData;
+        teacherJHS = data.teacherJHS || teacherJHS;
+        shsAcademic = data.shsAcademic || shsAcademic;
+        shsTVL = data.shsTVL || shsTVL;
+        strandEnrollment = data.strandEnrollment || strandEnrollment;
+        activityLogs = data.activityLogs || activityLogs;
+        for (let yr of schoolYears) if (!strandEnrollment[yr]) strandEnrollment[yr] = {};
+    }
+
+    // ---------- GLOBAL DATA STRUCTURES (with SHS strand enrollments) ----------
+    let schoolYears = ["2021-2022","2022-2023","2023-2024","2024-2025","2025-2026"];
+    const grades = ["Grade 7","Grade 8","Grade 9","Grade 10","Grade 11","Grade 12"];
+    const jhsSubjects = ["ENGLISH","MATH","SCIENCE","FILIPINO","AP","VALUES","TLE","MAPEH"];
+    // Strands list
+    const strandNames = ["STEM", "ABM", "HUMSS", "GAS", "ICT/CSS", "EIM", "HBC"];
+    
+    let enrolleesData = {};
+    let repeatersData = {};
+    let dropoutsData = {};
+    let teacherJHS = {};
+    let shsAcademic = [];
+    let shsTVL = [];
+    // New: strand enrollments per school year: { "2025-2026": { "STEM": {g11:69, g12:70}, ... } }
+    let strandEnrollment = {};
+    
+     // Helper: initialize default data including strands
+    function initDefaultData() {
+        const defaultEnrol = { "2021-2022":[475,465,548,558,445,340], "2022-2023":[422,424,508,482,465,342], "2023-2024":[313,335,392,413,340,413], "2024-2025":[402,318,305,367,368,340], "2025-2026":[432,380,300,294,323,338] };
+        const defaultRepeaters = { "2021-2022":[5,9,15,5,3,0], "2022-2023":[4,53,15,2,7,2], "2023-2024":[5,16,12,11,43,0], "2024-2025":[12,11,3,2,0,0], "2025-2026":[14,9,18,8,0,0] };
+        const defaultDropouts = { "2021-2022":[33,14,28,17,4,0], "2022-2023":[20,12,26,0,23,0], "2023-2024":[15,14,16,16,7,10], "2024-2025":[16,17,22,11,5,0], "2025-2026":[9,10,31,9,14,2] };
+        const defaultTeacherJHS = { "2021-2022":[8,8,8,8,8,4,10,11], "2022-2023":[8,8,8,8,8,4,11,11], "2023-2024":[7,8,8,8,8,4,10,11], "2024-2025":[7,6,8,6,6,6,9,9], "2025-2026":[6,6,7,6,7,5,8,8] };
+        const defaultShsAcademic = [10,11,12,12,14];
+        const defaultShsTVL = [10,11,12,12,11];
+        
+        for(let yr of schoolYears) {
+            enrolleesData[yr] = defaultEnrol[yr] || Array(6).fill(0);
+            repeatersData[yr] = defaultRepeaters[yr] || Array(6).fill(0);
+            dropoutsData[yr] = defaultDropouts[yr] || Array(6).fill(0);
+            teacherJHS[yr] = defaultTeacherJHS[yr] || Array(8).fill(0);
+        }
+        shsAcademic = [...defaultShsAcademic];
+        shsTVL = [...defaultShsTVL];
+        
+        // COMPLETE strand data for ALL school years (2021-2022 to 2025-2026)
+        strandEnrollment = {
+            // SY 2021-2022
+            "2021-2022": {
+                "STEM": { g11: 56, g12: 53 },
+                "ABM": { g11: 49, g12: 50 },
+                "GAS": { g11: 147, g12: 81 },
+                "HUMSS": { g11: 0, g12: 0 },
+                "ICT/CSS": { g11: 77, g12: 67 },
+                "EIM": { g11: 18, g12: 35 },
+                "HBC": { g11: 15, g12: 15 }
+            },
+            // SY 2022-2023
+            "2022-2023": {
+                "STEM": { g11: 35, g12: 56 },
+                "ABM": { g11: 78, g12: 48 },
+                "GAS": { g11: 127, g12: 134 },
+                "HUMSS": { g11: 0, g12: 0 },
+                "ICT/CSS": { g11: 120, g12: 44 },
+                "EIM": { g11: 43, g12: 24 },
+                "HBC": { g11: 26, g12: 9 }
+            },
+            // SY 2023-2024
+            "2023-2024": {
+                "STEM": { g11: 64, g12: 38 },
+                "ABM": { g11: 46, g12: 80 },
+                "GAS": { g11: 0, g12: 122 },
+                "HUMSS": { g11: 89, g12: 0 },
+                "ICT/CSS": { g11: 108, g12: 112 },
+                "EIM": { g11: 54, g12: 65 },
+                "HBC": { g11: 19, g12: 25 }
+            },
+            // SY 2024-2025
+            "2024-2025": {
+                "STEM": { g11: 71, g12: 64 },
+                "ABM": { g11: 56, g12: 45 },
+                "GAS": { g11: 0, g12: 0 },
+                "HUMSS": { g11: 103, g12: 97 },
+                "ICT/CSS": { g11: 69, g12: 65 },
+                "EIM": { g11: 33, g12: 48 },
+                "HBC": { g11: 14, g12: 11 }
+            },
+            // SY 2025-2026 (existing data - kept as is)
+            "2025-2026": {
+                "STEM": { g11: 69, g12: 70 },
+                "ABM": { g11: 42, g12: 52 },
+                "HUMSS": { g11: 102, g12: 103 },
+                "GAS": { g11: 0, g12: 0 },
+                "ICT/CSS": { g11: 65, g12: 67 },
+                "EIM": { g11: 31, g12: 33 },
+                "HBC": { g11: 14, g12: 14 }
+            }
+        };
+    }
+    initDefaultData();
+    
+    // Persist to localStorage + optional API
+    function persistGlobalData() {
+        const storage = getStoragePayload();
+        localStorage.setItem('dmmhs_master_data', JSON.stringify(storage));
+        syncToServer();
+    }
+    
+    function loadFromLocalStorage() {
+        const saved = localStorage.getItem('dmmhs_master_data');
+        if(saved) {
+            try {
+                applyStoragePayload(JSON.parse(saved));
+                return true;
+            } catch(e) { console.warn(e); }
+        }
+        return false;
+    }
+    if(!loadFromLocalStorage()) persistGlobalData();
+    
+    // Cross-tab sync
+    window.addEventListener('storage', (e) => {
+        if(e.key === 'dmmhs_master_data') {
+            loadFromLocalStorage();
+            if(document.getElementById("appWrapper")?.style.display === "flex") {
+                refreshCurrentViewPreserveState();
+                const sySelector = document.getElementById('sySelector');
+                if(sySelector && currentView === 'dashboard') {
+                    const currentVal = sySelector.value;
+                    sySelector.innerHTML = schoolYears.map(yr => `<option value="${yr}" ${yr === currentVal ? 'selected' : ''}>${yr}</option>`).join('');
+                    sySelector.dispatchEvent(new Event('change'));
+                }
+            }
+        }
+    });
+    
+    function getYearTotals(year) {
+        const idx = schoolYears.indexOf(year);
+        const totalEnrol = enrolleesData[year]?.reduce((a,b)=>a+b,0) || 0;
+        const totalRep = repeatersData[year]?.reduce((a,b)=>a+b,0) || 0;
+        const totalDrop = dropoutsData[year]?.reduce((a,b)=>a+b,0) || 0;
+        const totalJHS = teacherJHS[year]?.reduce((a,b)=>a+b,0) || 0;
+        const totalSHS = (shsAcademic[idx] || 0) + (shsTVL[idx] || 0);
+        return { totalEnrol, totalRep, totalDrop, totalTeachers: totalJHS + totalSHS };
+    }
+    
+    // Add new school year including strand data (optional)
+    function addNewSchoolYear(newYear, enrolArr, dropArr, repArr, teacherJHSArr, shsA, shsT, strandObj = null) {
+        if(schoolYears.includes(newYear)) { alert("School year already exists!"); return false; }
+        schoolYears.push(newYear);
+        schoolYears.sort();
+        enrolleesData[newYear] = enrolArr;
+        dropoutsData[newYear] = dropArr;
+        repeatersData[newYear] = repArr;
+        teacherJHS[newYear] = teacherJHSArr;
+        const idx = schoolYears.indexOf(newYear);
+        shsAcademic.splice(idx, 0, shsA);
+        shsTVL.splice(idx, 0, shsT);
+        if(strandObj) strandEnrollment[newYear] = strandObj;
+        else strandEnrollment[newYear] = {};
+        persistGlobalData();
+        refreshCurrentViewPreserveState();
+        return true;
+    }
+    
+    // Helper to get total SHS per strand for a given year (sum g11+g12)
+    function getStrandTotals(year) {
+        const data = strandEnrollment[year] || {};
+        return strandNames.map(s => {
+            const vals = data[s] || { g11:0, g12:0 };
+            return vals.g11 + vals.g12;
+        });
+    }
+    
+    // Global chart references
+    let currentDashboardChart = null, currentTrendChartGlobal = null;
+    let activeDashboardYear = schoolYears.includes("2025-2026") ? "2025-2026" : schoolYears[schoolYears.length-1];
+    let currentView = "dashboard";
+    
+    if (typeof Chart !== 'undefined') {
+        Chart.defaults.color = '#CBD5E1';
+        Chart.defaults.borderColor = '#334155';
+        Chart.defaults.font.family = 'Inter';
+    }
+
+    function animateCounter(el, endValue) {
+        if (!el) return;
+        const end = Number(endValue) || 0;
+        const start = parseInt(String(el.textContent).replace(/,/g, ''), 10) || 0;
+        const duration = 600;
+        const t0 = performance.now();
+        const step = (t) => {
+            const p = Math.min((t - t0) / duration, 1);
+            const eased = 1 - Math.pow(1 - p, 3);
+            el.textContent = Math.round(start + (end - start) * eased).toLocaleString();
+            if (p < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+    }
+
+    function tickClock() {
+        const now = new Date();
+        const d = document.getElementById('headerDate');
+        const c = document.getElementById('headerClock');
+        if (d) d.textContent = now.toLocaleDateString('en-PH', { weekday: 'short', year: 'numeric', month: 'long', day: 'numeric' });
+        if (c) c.textContent = now.toLocaleTimeString('en-PH', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+    }
+
+    // Theme handling
+    function setTheme(theme) {
+        const body = document.body;
+        if (theme === 'light') { body.classList.add('light-theme'); body.classList.remove('dark-theme'); localStorage.setItem('dmmhs_theme', 'light'); updateThemeIcons('light'); }
+        else { body.classList.remove('light-theme'); body.classList.add('dark-theme'); localStorage.setItem('dmmhs_theme', 'dark'); updateThemeIcons('dark'); }
+        refreshCurrentViewPreserveState();
+    }
+    function updateThemeIcons(theme) { document.querySelectorAll('#themeToggleLabel').forEach(span => { if(span) span.innerText = theme === 'light' ? 'Light' : 'Dark'; }); const loginIcon = document.querySelector('#loginThemeToggle i'); if(loginIcon) loginIcon.className = theme === 'light' ? 'fas fa-sun' : 'fas fa-moon'; const dashIcon = document.querySelector('#dashboardThemeToggle i'); if(dashIcon) dashIcon.className = theme === 'light' ? 'fas fa-sun' : 'fas fa-moon'; }
+    function refreshCurrentViewPreserveState() {
+        const oldYear = activeDashboardYear;
+        renderView(currentView);
+        if (currentView === 'dashboard') {
+            const newSelector = document.getElementById('sySelector');
+            if (newSelector && oldYear && schoolYears.includes(oldYear)) {
+                newSelector.value = oldYear;
+                activeDashboardYear = oldYear;
+                newSelector.dispatchEvent(new Event('change'));
+            } else if (schoolYears.length && newSelector) {
+                newSelector.value = schoolYears[schoolYears.length - 1];
+                newSelector.dispatchEvent(new Event('change'));
+            }
+        } else if (currentView === 'analytics' || currentView === 'reports') {
+            const id = currentView === 'analytics' ? 'acSYSelector' : 'reportSYSelector';
+            const sel = document.getElementById(id);
+            if (sel && oldYear && schoolYears.includes(oldYear)) sel.value = oldYear;
+        }
+    }
+
+    function openEditCellModal({ title, value, onSave }) {
+        const modal = document.createElement('div');
+        modal.className = 'modal-overlay';
+        modal.innerHTML = `<div class="modal-card"><h3>${title}</h3><input type="number" id="editCellVal" value="${value}" style="width:100%;padding:0.6rem;margin:1rem 0;background:var(--input-bg);border:1px solid var(--card-border);border-radius:1rem;color:var(--text-primary);"><div style="display:flex;gap:0.8rem;"><button id="editSave" class="btn-primary">Save</button><button id="editCancel" class="btn-secondary">Cancel</button></div></div>`;
+        document.body.appendChild(modal);
+        modal.querySelector('#editSave').onclick = () => { const v = parseInt(modal.querySelector('#editCellVal').value, 10) || 0; onSave(v); modal.remove(); };
+        modal.querySelector('#editCancel').onclick = () => modal.remove();
+    }
+
+    function bindEditableTable(tableId, dataKey, yearCols) {
+        if (!canEdit()) return;
+        const table = document.getElementById(tableId);
+        if (!table) return;
+        table.querySelectorAll('td[data-yr][data-grade]').forEach(td => {
+            td.classList.add('editable-cell');
+            td.title = 'Click to edit';
+            td.onclick = () => {
+                const yr = td.dataset.yr;
+                const gi = parseInt(td.dataset.grade, 10);
+                openEditCellModal({
+                    title: `Edit ${dataKey} — ${grades[gi]} (${yr})`,
+                    value: td.textContent,
+                    onSave: (v) => {
+                        const maps = { enrollees: enrolleesData, dropouts: dropoutsData, repeaters: repeatersData };
+                        const map = maps[dataKey];
+                        if (!map[yr]) map[yr] = Array(6).fill(0);
+                        map[yr][gi] = v;
+                        persistGlobalData();
+                        addLog('edit', `${dataKey} ${grades[gi]} ${yr} = ${v}`);
+                        showToast('Value updated', 'success');
+                        refreshCurrentViewPreserveState();
+                    }
+                });
+            };
+        });
+    }
+
+    function exportJsonBackup() {
+        const blob = new Blob([JSON.stringify(getStoragePayload(), null, 2)], { type: 'application/json' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = `dmmhs_backup_${new Date().toISOString().slice(0, 10)}.json`;
+        a.click();
+        addLog('export', 'JSON backup downloaded');
+        showToast('JSON exported', 'success');
+    }
+
+    function exportExcelReport() {
+        if (typeof XLSX === 'undefined') { showToast('Excel library not loaded'); return; }
+        const yr = activeDashboardYear || schoolYears[schoolYears.length - 1];
+        const rows = grades.map((g, i) => ({
+            Grade: g,
+            Enrollment: enrolleesData[yr]?.[i] || 0,
+            Dropouts: dropoutsData[yr]?.[i] || 0,
+            Repeaters: repeatersData[yr]?.[i] || 0
+        }));
+        const ws = XLSX.utils.json_to_sheet(rows);
+        const wb = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(wb, ws, yr);
+        XLSX.writeFile(wb, `DMMHS_${yr.replace(/-/g, '_')}.xlsx`);
+        addLog('export', `Excel ${yr}`);
+        showToast('Excel exported', 'success');
+    }
+    function initTheme() { const savedTheme = localStorage.getItem('dmmhs_theme'); if (savedTheme === 'light') setTheme('light'); else setTheme('dark'); }
+    
+    function updateDashboardStrandSnapshot(year) {
+        const strandTotals = getStrandTotals(year);
+        const strandDiv = document.getElementById('strandQuickList');
+        const spanEl = document.getElementById('strandYearLabel');
+        if (spanEl) spanEl.innerText = year;
+        if (strandDiv) strandDiv.innerHTML = strandNames.map((s, i) => `<span class="badge">${s}: ${strandTotals[i]}</span>`).join('');
+        const canvas = document.getElementById('strandSummaryChart');
+        if (canvas) {
+            if (window.strandChart) try { window.strandChart.destroy(); } catch (e) {}
+            const tick = getComputedStyle(document.body).getPropertyValue('--chart-tick');
+            window.strandChart = new Chart(canvas.getContext('2d'), {
+                type: 'bar',
+                data: { labels: strandNames, datasets: [{ label: 'Total (G11+G12)', data: strandTotals, backgroundColor: 'rgba(56,189,248,0.75)' }] },
+                options: { responsive: true, plugins: { legend: { labels: { color: tick } } }, scales: { y: { ticks: { color: tick } }, x: { ticks: { color: tick } } } }
+            });
+        }
+    }
+
+    function updateDashboardInsights(year) {
+        const latest = getYearTotals(year);
+        const retention = latest.totalEnrol ? ((1 - latest.totalDrop / latest.totalEnrol) * 100).toFixed(1) : '0';
+        const panel = document.getElementById('smartInsights');
+        if (!panel) return;
+        const idx = schoolYears.indexOf(year);
+        const prev = idx > 0 ? schoolYears[idx - 1] : null;
+        const prevTot = prev ? (enrolleesData[prev]?.reduce((a, b) => a + b, 0) || 0) : null;
+        const curTot = latest.totalEnrol;
+        let trendHtml = 'Historical trend data loading…';
+        if (prevTot != null) {
+            const pct = prevTot ? (((curTot - prevTot) / prevTot) * 100).toFixed(1) : 0;
+            trendHtml = `YoY vs ${prev}: <strong>${pct > 0 ? '+' : ''}${pct}%</strong> enrollment change`;
+        }
+        panel.innerHTML = `<h4><i class="fas fa-lightbulb"></i> Executive Insights · ${year}</h4>
+            <div class="insight-item">Retention rate: <strong>${retention}%</strong></div>
+            <div class="insight-item">Student–teacher ratio: <strong>${latest.totalTeachers ? (latest.totalEnrol / latest.totalTeachers).toFixed(1) : '—'}:1</strong></div>
+            <div class="insight-item">${trendHtml}</div>
+            <div class="insight-item">Complete data overview — use tabs for Enrollment, Reports, and Analytics Continuum.</div>`;
+    }
+
+    // DASHBOARD RENDER (adds SHS strand summary card)
+    function renderDashboard(container) {
+        container.className = 'view-enter';
+        const year = activeDashboardYear || schoolYears[schoolYears.length - 1];
+        const latest = getYearTotals(year);
+        const retention = latest.totalEnrol ? ((1 - latest.totalDrop / latest.totalEnrol) * 100).toFixed(1) : '0';
+        container.innerHTML = `
+            <div class="exec-overview">
+                <h3><i class="fas fa-chart-pie"></i> Complete Dashboard Overview</h3>
+                <p>A complete overview of the whole dashboard data for <strong>Diosdado Macapagal Memorial Highschool</strong>. Select a school year below to dynamically filter KPIs, charts, strand snapshot, and linked analytics sections.</p>
+            </div>
+            <div class="global-slicer">
+                <label><i class="fas fa-filter"></i> Global School Year Slicer</label>
+                <select id="sySelector" class="year-selector">${schoolYears.map(yr => `<option value="${yr}" ${yr === activeDashboardYear ? 'selected' : ''}>${yr}</option>`).join('')}</select>
+                <span style="font-size:0.75rem;color:var(--text-secondary);">Filters dashboard KPIs, charts &amp; continuum reports</span>
+            </div>
+            <div class="insights-panel" id="smartInsights"><h4><i class="fas fa-lightbulb"></i> Executive Insights</h4>
+                <div class="insight-item">Retention rate (${year}): <strong>${retention}%</strong></div>
+                <div class="insight-item">Student–teacher ratio: <strong>${latest.totalTeachers ? (latest.totalEnrol / latest.totalTeachers).toFixed(1) : '—'}:1</strong></div>
+                <div class="insight-item" id="insightTrend">Analyzing enrollment trend…</div>
+            </div>
+            <div class="stat-grid"><div class="info-card kpi-card kpi-blue"><div class="kpi-icon"><i class="fas fa-users"></i></div><h4>📚 TOTAL ENROLLEES</h4><div class="value" id="enrolValue">--</div></div><div class="info-card kpi-card kpi-drop"><div class="kpi-icon"><i class="fas fa-user-slash"></i></div><h4>⚠️ DROPOUTS</h4><div class="value" id="dropValue">--</div></div><div class="info-card kpi-card kpi-rep"><div class="kpi-icon"><i class="fas fa-redo-alt"></i></div><h4>🔄 REPEATERS</h4><div class="value" id="repValue">--</div></div><div class="info-card kpi-card kpi-teach"><div class="kpi-icon"><i class="fas fa-chalkboard-teacher"></i></div><h4>👩‍🏫 TEACHERS</h4><div class="value" id="teachValue">--</div></div></div>
+            <div class="info-card"><h4><i class="fas fa-chart-bar"></i> Enrollees by Grade · <span id="selectedYearSpan">${activeDashboardYear}</span></h4><canvas id="gradeDistributionChart"></canvas></div>
+            <div class="info-card"><h4>📈 Historical Enrollment Trend</h4><canvas id="trendCanvasMain"></canvas></div>
+            <div class="info-card"><h4>🏫 SHS Strand Snapshot · <span id="strandYearLabel">${activeDashboardYear}</span></h4>
+                <div class="strand-chart-container"><canvas id="strandSummaryChart" style="max-height:200px;"></canvas></div>
+                <div class="badge-list" id="strandQuickList"></div>
+            </div>
+        `;
+        updateDashboardStrandSnapshot(activeDashboardYear);
+        
+        const ctxTrend = document.getElementById("trendCanvasMain").getContext("2d");
+        if(currentTrendChartGlobal) currentTrendChartGlobal.destroy();
+        const totalsPerYear = schoolYears.map(yr => enrolleesData[yr]?.reduce((a,b)=>a+b,0) || 0);
+        currentTrendChartGlobal = new Chart(ctxTrend, { type:'line', data:{ labels:schoolYears, datasets:[{ label:'Total Enrollees', data:totalsPerYear, borderColor:'#4c8bff', backgroundColor:'rgba(76,139,255,0.1)', fill:true, tension:0.3 }] }, options:{ responsive:true, plugins:{ legend:{ labels:{ color:getComputedStyle(document.body).getPropertyValue('--chart-tick') } } }, scales:{ y:{ ticks:{ color:getComputedStyle(document.body).getPropertyValue('--chart-tick') } }, x:{ ticks:{ color:getComputedStyle(document.body).getPropertyValue('--chart-tick') } } } } });
+        
+        const selector = document.getElementById("sySelector");
+        const updateForYear = (year) => {
+            if(!enrolleesData[year]) return;
+            if (typeof setGlobalSchoolYear === 'function') setGlobalSchoolYear(year);
+            else activeDashboardYear = year;
+            document.getElementById("selectedYearSpan").innerText = year;
+            updateDashboardStrandSnapshot(year);
+            updateDashboardInsights(year);
+            const totals = getYearTotals(year);
+            const anim = (el) => { el.classList.remove("value-updated"); void el.offsetWidth; el.classList.add("value-updated"); };
+            const ev = document.getElementById("enrolValue"); animateCounter(ev, totals.totalEnrol); anim(ev);
+            const dv = document.getElementById("dropValue"); animateCounter(dv, totals.totalDrop); anim(dv);
+            const rv = document.getElementById("repValue"); animateCounter(rv, totals.totalRep); anim(rv);
+            const tv = document.getElementById("teachValue"); animateCounter(tv, totals.totalTeachers); anim(tv);
+            const gradeData = enrolleesData[year];
+            if(currentDashboardChart) currentDashboardChart.destroy();
+            const ctxBar = document.getElementById("gradeDistributionChart").getContext("2d");
+            const tickColor = getComputedStyle(document.body).getPropertyValue('--chart-tick');
+            currentDashboardChart = new Chart(ctxBar, { type:'bar', data:{ labels:grades, datasets:[{ label:`Enrollees (${year})`, data:gradeData, backgroundColor:'rgba(100,150,255,0.7)', borderRadius:8 }] }, options:{ responsive:true, plugins:{ legend:{ labels:{ color:tickColor } } }, scales:{ y:{ ticks:{ color:tickColor } }, x:{ ticks:{ color:tickColor } } } } });
+        };
+        selector.onchange = (e) => updateForYear(e.target.value);
+        updateForYear(activeDashboardYear);
+    }
+    
+    // SHS STRANDS VIEW: detailed per strand, per grade level
+    function renderSHSStrands(container) {
+        container.className = 'view-enter';
+        let html = `<div class="info-card"><h4><i class="fas fa-layer-group"></i> SHS Strand Enrollments (Grade 11 & 12) per School Year ${canEdit() ? '<span class="role-badge">Editable</span>' : ''}</h4>
+            <select id="strandYearSelector" class="year-selector" style="margin-bottom:1rem;">${schoolYears.map(yr => `<option value="${yr}">${yr}</option>`).join('')}</select>
+            <div id="strandDetailArea"></div>
+        </div>`;
+        container.innerHTML = html;
+        function renderStrandTable(year) {
+            const data = strandEnrollment[year] || {};
+            const tbody = strandNames.map(s => {
+                const vals = data[s] || { g11:0, g12:0 };
+                const editBtn = canEdit() ? `<button class="btn-edit" data-strand="${s}" data-year="${year}"><i class="fas fa-pen"></i></button>` : '';
+                return `<tr><td><b>${s}</b>${editBtn}</td><td>${vals.g11}</td><td>${vals.g12}</td><td>${vals.g11+vals.g12}</td></tr>`;
+            }).join('');
+            const totalG11 = strandNames.reduce((sum,s) => sum + ((strandEnrollment[year]?.[s]?.g11)||0),0);
+            const totalG12 = strandNames.reduce((sum,s) => sum + ((strandEnrollment[year]?.[s]?.g12)||0),0);
+            document.getElementById("strandDetailArea").innerHTML = `
+                <table class="data-table"><thead><tr><th>Strand</th><th>Grade 11</th><th>Grade 12</th><th>Total</th></tr></thead><tbody>${tbody}<tr style="border-top:2px solid var(--card-border);"><td><b>TOTAL</b></td><td><b>${totalG11}</b></td><td><b>${totalG12}</b></td><td><b>${totalG11+totalG12}</b></td></tr></tbody></table>
+                <div class="strand-chart-container"><canvas id="strandGradeChart"></canvas></div>
+            `;
+            const ctx = document.getElementById("strandGradeChart").getContext("2d");
+            if(window.strandDetailChart) window.strandDetailChart.destroy();
+            window.strandDetailChart = new Chart(ctx, { type:'bar', data:{ labels:strandNames, datasets:[{ label:'Grade 11', data:strandNames.map(s=>strandEnrollment[year]?.[s]?.g11||0), backgroundColor:'#4c8bff' }, { label:'Grade 12', data:strandNames.map(s=>strandEnrollment[year]?.[s]?.g12||0), backgroundColor:'#ffa05e' }] }, options:{ responsive:true, plugins:{ legend:{ labels:{ color:getComputedStyle(document.body).getPropertyValue('--chart-tick') } } }, scales:{ y:{ ticks:{ color:getComputedStyle(document.body).getPropertyValue('--chart-tick') } }, x:{ ticks:{ color:getComputedStyle(document.body).getPropertyValue('--chart-tick') } } } } });
+            document.querySelectorAll('#strandDetailArea .btn-edit').forEach(btn => {
+                btn.onclick = () => {
+                    const s = btn.dataset.strand;
+                    const y = btn.dataset.year;
+                    const cur = strandEnrollment[y]?.[s] || { g11: 0, g12: 0 };
+                    const modal = document.createElement('div');
+                    modal.className = 'modal-overlay';
+                    modal.innerHTML = `<div class="modal-card"><h3>Edit ${s} (${y})</h3><div class="form-grid"><div class="form-field"><label>Grade 11</label><input type="number" id="edG11" value="${cur.g11}"></div><div class="form-field"><label>Grade 12</label><input type="number" id="edG12" value="${cur.g12}"></div></div><button id="strandSave" class="btn-primary" style="margin-top:1rem;">Save</button></div>`;
+                    document.body.appendChild(modal);
+                    modal.querySelector('#strandSave').onclick = () => {
+                        if (!strandEnrollment[y]) strandEnrollment[y] = {};
+                        strandEnrollment[y][s] = { g11: parseInt(modal.querySelector('#edG11').value, 10) || 0, g12: parseInt(modal.querySelector('#edG12').value, 10) || 0 };
+                        persistGlobalData();
+                        addLog('edit', `Strand ${s} ${y}`);
+                        modal.remove();
+                        renderStrandTable(y);
+                        showToast('Strand updated', 'success');
+                    };
+                };
+            });
+        }
+        const selector = document.getElementById("strandYearSelector");
+        selector.addEventListener("change", (e) => renderStrandTable(e.target.value));
+        renderStrandTable(selector.value);
+    }
+    
+    // DATA ADMIN: extended to include strand data input
+    function renderDataAdmin(container) {
+        if (!isAdmin()) {
+            container.innerHTML = `<div class="info-card view-enter"><h4>Access Restricted</h4><p>Data Admin requires an <strong>admin</strong> account. Editors can update values from Enrollment, Dropouts, Repeaters, and SHS Strands views.</p></div>`;
+            return;
+        }
+        container.className = 'view-enter';
+        container.innerHTML = `
+            <div class="info-card" style="margin-bottom:1rem;">
+                <h4><i class="fas fa-cloud-arrow-down"></i> Backup</h4>
+                <div style="display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:0.6rem;">
+                    <button id="exportBackupBtn" class="btn-primary"><i class="fas fa-download"></i> Export JSON</button>
+                    <button id="syncServerBtn" class="btn-secondary"><i class="fas fa-sync"></i> Push to Database</button>
+                </div>
+            </div>
+            <div class="info-card"><h4><i class="fas fa-plus-circle"></i> Add New School Year (with optional strand data)</h4>
+            <p>Fill all fields. New year will sync across all views.</p>
+            <div class="form-field"><label>School Year (e.g., 2026-2027)</label><input type="text" id="newSY" placeholder="2026-2027"></div>
+            <hr><h5>📌 Enrollees per Grade (6 values)</h5><div class="form-grid" id="enrolGrid"></div>
+            <h5>⚠️ Dropouts per Grade</h5><div class="form-grid" id="dropGrid"></div>
+            <h5>🔄 Repeaters per Grade</h5><div class="form-grid" id="repGrid"></div>
+            <h5>👩‍🏫 JHS Teachers (8 subjects)</h5><div class="form-grid" id="teacherGrid"></div>
+            <div class="form-field"><label>SHS Academic Teachers</label><input type="number" id="shsAcademicVal" value="10"></div>
+            <div class="form-field"><label>SHS TVL Teachers</label><input type="number" id="shsTVLVal" value="10"></div>
+            <hr><h5>🏫 SHS Strand Enrollments (optional, for this new year)</h5>
+            <div id="strandInputsContainer"></div>
+            <button id="submitNewYearBtn" class="btn-primary" style="margin-top:1rem;">Add Year & Update</button>
+            <hr><button id="resetDefaultDataBtn" class="btn-secondary">Reset to Original Default Data</button>
+            </div>
+        `;
+        function buildNumberGrid(containerId, count, defaultVal=0) {
+            const grid = document.getElementById(containerId);
+            grid.innerHTML = '';
+            for(let i=0; i<count; i++) {
+                const div = document.createElement('div'); div.className = 'form-field';
+                div.innerHTML = `<label>${grades[i] || `Index ${i+1}`}</label><input type="number" value="${defaultVal}" step="1">`;
+                grid.appendChild(div);
+            }
+        }
+        buildNumberGrid('enrolGrid', 6, 0);
+        buildNumberGrid('dropGrid', 6, 0);
+        buildNumberGrid('repGrid', 6, 0);
+        const teacherGrid = document.getElementById('teacherGrid');
+        teacherGrid.innerHTML = '';
+        jhsSubjects.forEach(sub => { const div = document.createElement('div'); div.className='form-field'; div.innerHTML=`<label>${sub}</label><input type="number" value="5">`; teacherGrid.appendChild(div); });
+        
+        const strandContainer = document.getElementById("strandInputsContainer");
+        strandContainer.innerHTML = strandNames.map(s => `<div style="border:1px solid var(--card-border); border-radius:1rem; padding:0.5rem; margin-bottom:0.5rem;"><b>${s}</b><div class="form-grid"><div class="form-field"><label>G11</label><input type="number" id="strand_g11_${s.replace(/\//g,'')}" value="0"></div><div class="form-field"><label>G12</label><input type="number" id="strand_g12_${s.replace(/\//g,'')}" value="0"></div></div></div>`).join('');
+        
+        document.getElementById('submitNewYearBtn').onclick = () => {
+            const newYear = document.getElementById('newSY').value.trim();
+            if(!newYear || schoolYears.includes(newYear)) { alert("Unique school year required"); return; }
+            const enrolVals = [...document.querySelectorAll('#enrolGrid input')].map(inp => parseInt(inp.value) || 0);
+            const dropVals = [...document.querySelectorAll('#dropGrid input')].map(inp => parseInt(inp.value) || 0);
+            const repVals = [...document.querySelectorAll('#repGrid input')].map(inp => parseInt(inp.value) || 0);
+            const teacherVals = [...document.querySelectorAll('#teacherGrid input')].map(inp => parseInt(inp.value) || 0);
+            const shsA = parseInt(document.getElementById('shsAcademicVal').value) || 0;
+            const shsT = parseInt(document.getElementById('shsTVLVal').value) || 0;
+            const strandObj = {};
+            for(let s of strandNames) {
+                const g11 = parseInt(document.getElementById(`strand_g11_${s.replace(/\//g,'')}`).value) || 0;
+                const g12 = parseInt(document.getElementById(`strand_g12_${s.replace(/\//g,'')}`).value) || 0;
+                strandObj[s] = { g11, g12 };
+            }
+            addNewSchoolYear(newYear, enrolVals, dropVals, repVals, teacherVals, shsA, shsT, strandObj);
+            addLog('add_year', `School year ${newYear} created`);
+            showToast(`School year ${newYear} added with strand data.`, 'success');
+            document.querySelector('.nav-item[data-view="dashboard"]').click();
+        };
+        document.getElementById('resetDefaultDataBtn').onclick = () => {
+            showConfirm("Reset all data to original defaults?", () => {
+                initDefaultData();
+                schoolYears = ["2021-2022","2022-2023","2023-2024","2024-2025","2025-2026"];
+                persistGlobalData();
+                addLog('reset', 'Default data restored');
+                refreshCurrentViewPreserveState();
+                showToast('Data reset to defaults', 'success');
+                if(currentView === 'dataAdmin') renderDataAdmin(document.getElementById("dynamicView"));
+            });
+        };
+        document.getElementById('exportBackupBtn').onclick = exportJsonBackup;
+        document.getElementById('syncServerBtn').onclick = async () => {
+            await syncToServer();
+            showToast('Database sync attempted', 'success');
+        };
+    }
+
+    function renderAnalytics(container) {
+        if (typeof renderAnalyticsContinuum === 'function') {
+            renderAnalyticsContinuum(container);
+            return;
+        }
+        container.innerHTML = '<div class="info-card"><p>Analytics module loading… Reload the page if this persists.</p></div>';
+    }
+
+    function renderLogs(container) {
+        container.className = 'view-enter';
+        const rows = activityLogs.slice(0, 80).map(l =>
+            `<tr><td>${new Date(l.timestamp).toLocaleString()}</td><td>${l.user}</td><td><span class="role-badge">${l.role}</span></td><td>${l.action}</td><td>${l.details || ''}</td></tr>`
+        ).join('');
+        container.innerHTML = `<div class="info-card"><h4><i class="fas fa-history"></i> Activity Logs</h4><table class="data-table"><thead><tr><th>Time</th><th>User</th><th>Role</th><th>Action</th><th>Details</th></tr></thead><tbody>${rows || '<tr><td colspan="5">No activity yet</td></tr>'}</tbody></table></div>`;
+    }
+
+    async function renderUsers(container) {
+        container.className = 'view-enter';
+        if (!isAdmin()) {
+            container.innerHTML = `<div class="info-card"><h4>Admin Only</h4><p>User management requires administrator privileges.</p></div>`;
+            return;
+        }
+        let users = [];
+        try {
+            if (authToken) users = await apiFetch('/api/users');
+        } catch { showToast('Load users failed — is the server running?'); }
+        const rows = users.map(u =>
+            `<tr><td>${u.email}</td><td>${u.name || '—'}</td><td>${u.role}</td><td><button class="btn-edit" data-id="${u.id}" data-email="${u.email}" data-role="${u.role}" data-name="${u.name || ''}">Edit</button> <button class="btn-danger" data-del="${u.id}">Delete</button></td></tr>`
+        ).join('');
+        container.innerHTML = `
+            <div class="info-card"><h4><i class="fas fa-users-cog"></i> User Management</h4>
+            <div class="form-grid" style="margin-bottom:1rem;">
+                <div class="form-field"><label>Email</label><input id="newUserEmail" type="email" placeholder="user@dmmhs.edu.ph"></div>
+                <div class="form-field"><label>Password</label><input id="newUserPass" type="password"></div>
+                <div class="form-field"><label>Role</label><select id="newUserRole"><option value="viewer">viewer</option><option value="editor">editor</option><option value="admin">admin</option></select></div>
+                <div class="form-field"><label>Name</label><input id="newUserName" type="text"></div>
+            </div>
+            <button id="addUserBtn" class="btn-primary">Add User</button>
+            <hr>
+            <table class="data-table"><thead><tr><th>Email</th><th>Name</th><th>Role</th><th>Actions</th></tr></thead><tbody>${rows}</tbody></table>
+            </div>`;
+        document.getElementById('addUserBtn').onclick = async () => {
+            try {
+                await apiFetch('/api/users', { method: 'POST', body: JSON.stringify({
+                    email: document.getElementById('newUserEmail').value,
+                    password: document.getElementById('newUserPass').value,
+                    role: document.getElementById('newUserRole').value,
+                    name: document.getElementById('newUserName').value
+                })});
+                showToast('User created', 'success');
+                renderUsers(container);
+            } catch (e) { showToast(e.message); }
+        };
+        container.querySelectorAll('[data-del]').forEach(btn => {
+            btn.onclick = () => showConfirm('Delete this user?', async () => {
+                await apiFetch(`/api/users/${btn.dataset.del}`, { method: 'DELETE' });
+                renderUsers(container);
+            });
+        });
+        container.querySelectorAll('.btn-edit[data-id]').forEach(btn => {
+            btn.onclick = () => {
+                const modal = document.createElement('div');
+                modal.className = 'modal-overlay';
+                modal.innerHTML = `<div class="modal-card"><h3>Edit ${btn.dataset.email}</h3>
+                    <div class="form-field"><label>Role</label><select id="euRole"><option ${btn.dataset.role==='viewer'?'selected':''}>viewer</option><option ${btn.dataset.role==='editor'?'selected':''}>editor</option><option ${btn.dataset.role==='admin'?'selected':''}>admin</option></select></div>
+                    <div class="form-field"><label>Name</label><input id="euName" value="${btn.dataset.name}"></div>
+                    <div class="form-field"><label>New password (optional)</label><input id="euPass" type="password"></div>
+                    <button id="euSave" class="btn-primary">Save</button></div>`;
+                document.body.appendChild(modal);
+                modal.querySelector('#euSave').onclick = async () => {
+                    const body = { role: modal.querySelector('#euRole').value, name: modal.querySelector('#euName').value };
+                    const p = modal.querySelector('#euPass').value;
+                    if (p) body.password = p;
+                    await apiFetch(`/api/users/${btn.dataset.id}`, { method: 'PATCH', body: JSON.stringify(body) });
+                    modal.remove();
+                    renderUsers(container);
+                };
+            };
+        });
+    }
+    
+    // Simplified render functions for other views (kept dynamic)
+    function renderEnrollment(container) { container.className = 'view-enter'; let html = `<div class="info-card"><h4>Enrollees by Grade ${canEdit() ? '<span class="role-badge">Click cells to edit</span>' : ''}</h4><div class="table-scroll"><table class="data-table" id="tblEnrol"><thead><tr><th>Grade</th>${schoolYears.map(yr=>`<th>${yr}</th>`).join('')}</tr></thead><tbody>`; for(let g=0;g<grades.length;g++){ html+=`<tr><td><b>${grades[g]}</b></td>`; for(let yr of schoolYears) html+=`<td data-yr="${yr}" data-grade="${g}">${enrolleesData[yr]?.[g]||0}</td>`; html+=`</tr>`; } html+=`</tbody></table></div><div class="info-card"><h4>Total Enrollment Trend</h4><canvas id="enrolTrendView"></canvas></div>`; container.innerHTML=html; bindEditableTable('tblEnrol', 'enrollees'); const totals = schoolYears.map(yr=>enrolleesData[yr]?.reduce((a,b)=>a+b,0)||0); new Chart(document.getElementById("enrolTrendView").getContext("2d"), { type:'bar', data:{ labels:schoolYears, datasets:[{ label:'Total Enrolment', data:totals, backgroundColor:'#6fa8ff' }] }, options:{ plugins:{ legend:{ labels:{ color:getComputedStyle(document.body).getPropertyValue('--chart-tick') } } } } }); }
+    function renderDropouts(container) { container.className = 'view-enter'; let html = `<div class="info-card"><h4>Dropouts per Grade ${canEdit() ? '<span class="role-badge">Click cells to edit</span>' : ''}</h4><div class="table-scroll"><table class="data-table" id="tblDrop"><thead><tr><th>Grade</th>${schoolYears.map(yr=>`<th>${yr}</th>`).join('')}</tr></thead><tbody>`; for(let g=0;g<grades.length;g++){ html+=`<tr><td><b>${grades[g]}</b></td>`; for(let yr of schoolYears) html+=`<td data-yr="${yr}" data-grade="${g}">${dropoutsData[yr]?.[g]||0}</td>`; html+=`</tr>`; } html+=`</tbody></table></div><div class="info-card"><h4>Total Dropouts Trend</h4><canvas id="dropViewChart"></canvas></div>`; container.innerHTML=html; bindEditableTable('tblDrop', 'dropouts'); const totals = schoolYears.map(yr=>dropoutsData[yr]?.reduce((a,b)=>a+b,0)||0); new Chart(document.getElementById("dropViewChart").getContext("2d"), { type:'line', data:{ labels:schoolYears, datasets:[{ label:'Dropouts', data:totals, borderColor:'#ff8a7a' }] }, options:{ plugins:{ legend:{ labels:{ color:getComputedStyle(document.body).getPropertyValue('--chart-tick') } } } } }); }
+    function renderRepeaters(container) { container.className = 'view-enter'; let html = `<div class="info-card"><h4>Repeaters per Grade ${canEdit() ? '<span class="role-badge">Click cells to edit</span>' : ''}</h4><div class="table-scroll"><table class="data-table" id="tblRep"><thead><tr><th>Grade</th>${schoolYears.map(yr=>`<th>${yr}</th>`).join('')}</tr></thead><tbody>`; for(let g=0;g<grades.length;g++){ html+=`<tr><td><b>${grades[g]}</b></td>`; for(let yr of schoolYears) html+=`<td data-yr="${yr}" data-grade="${g}">${repeatersData[yr]?.[g]||0}</td>`; html+=`</tr>`; } html+=`</tbody></table></div><div class="info-card"><h4>Total Repeaters Trend</h4><canvas id="repViewChart"></canvas></div>`; container.innerHTML=html; bindEditableTable('tblRep', 'repeaters'); const totals = schoolYears.map(yr=>repeatersData[yr]?.reduce((a,b)=>a+b,0)||0); new Chart(document.getElementById("repViewChart").getContext("2d"), { type:'line', data:{ labels:schoolYears, datasets:[{ label:'Repeaters', data:totals, borderColor:'#f9c74f' }] }, options:{ plugins:{ legend:{ labels:{ color:getComputedStyle(document.body).getPropertyValue('--chart-tick') } } } } }); }
+    function renderTeachers(container) { let html = `<div class="info-card"><h4>JHS Teachers per Subject (Latest: ${schoolYears[schoolYears.length-1]})</h4><div class="badge-list">${jhsSubjects.map((sub,i)=>`<span class="badge">${sub}: ${teacherJHS[schoolYears[schoolYears.length-1]]?.[i]||0}</span>`).join('')}</div></div><div class="info-card"><h4>SHS Teachers</h4><table class="data-table"><tr><th>SY</th><th>Academic</th><th>TVL</th></tr>${schoolYears.map((yr,idx)=>`<tr><td>${yr}</td><td>${shsAcademic[idx]||0}</td><td>${shsTVL[idx]||0}</td></tr>`).join('')}</table></div><div class="info-card"><h4>JHS Teacher Trend</h4><canvas id="teacherTrendChart"></canvas></div>`; container.innerHTML=html; const totalsJHS = schoolYears.map(yr=>teacherJHS[yr]?.reduce((a,b)=>a+b,0)||0); new Chart(document.getElementById("teacherTrendChart").getContext("2d"), { type:'line', data:{ labels:schoolYears, datasets:[{ label:'JHS Teachers Total', data:totalsJHS, borderColor:'#7bc9ff' }] }, options:{ plugins:{ legend:{ labels:{ color:getComputedStyle(document.body).getPropertyValue('--chart-tick') } } } } }); }
+    function renderReports(container) {
+        if (typeof renderReportsContinuum === 'function') {
+            renderReportsContinuum(container);
+            return;
+        }
+        const latestYear = schoolYears[schoolYears.length - 1];
+        const latest = getYearTotals(latestYear);
+        container.innerHTML = `<div class="info-card"><h4>Performance Summary ${latestYear}</h4><table class="data-table"><tr><th>Metric</th><th>Value</th></tr><tr><td>Retention Rate</td><td>${((1 - latest.totalDrop/latest.totalEnrol)*100).toFixed(1)}%</td></tr><tr><td>Repeater Incidence</td><td>${((latest.totalRep/latest.totalEnrol)*100).toFixed(1)}%</td></tr><tr><td>Student-Teacher Ratio</td><td>${(latest.totalEnrol/latest.totalTeachers).toFixed(1)}:1</td></tr></table></div><div class="info-card"><h4>Comparison Trend</h4><canvas id="compChartReports"></canvas></div>`;
+        const totalsEnrol = schoolYears.map(yr=>enrolleesData[yr]?.reduce((a,b)=>a+b,0)||0);
+        const totalsDrop = schoolYears.map(yr=>dropoutsData[yr]?.reduce((a,b)=>a+b,0)||0);
+        const totalsRep = schoolYears.map(yr=>repeatersData[yr]?.reduce((a,b)=>a+b,0)||0);
+        new Chart(document.getElementById("compChartReports").getContext("2d"), { type:'line', data:{ labels:schoolYears, datasets:[{ label:'Enrollees', data:totalsEnrol, borderColor:'#4c8bff' }, { label:'Dropouts', data:totalsDrop, borderColor:'#ff7b6b' }, { label:'Repeaters', data:totalsRep, borderColor:'#f9c74f' }] }, options:{ plugins:{ legend:{ labels:{ color:getComputedStyle(document.body).getPropertyValue('--chart-tick') } } } } });
+    }
+    function renderSettings(container) {
+        container.className = 'view-enter';
+        container.innerHTML = `<div class="info-card"><h4>⚙️ Theme &amp; Preferences</h4>
+            <p><button id="settingsThemeBtn" class="theme-toggle-btn"><i class="fas fa-adjust"></i> Toggle Light/Dark Mode</button></p>
+            <p>Role: <strong>${currentUser.role}</strong> <span class="role-badge">${currentUser.role === 'admin' ? 'Full Access' : currentUser.role === 'editor' ? 'Edit Data' : 'View Only'}</span></p>
+            <p>Account: ${currentUser.email || localStorage.getItem('rememberedEmail') || '—'}</p>
+            <p>Data persists in localStorage and syncs to SQLite when the API server is running.</p>
+            <button id="clearRememberBtn" class="logout-side">Clear saved email</button>
+            <button id="clearCacheBtn" class="btn-secondary" style="margin-left:0.5rem;">Reset local cache</button>
+        </div>`;
+        document.getElementById("settingsThemeBtn")?.addEventListener("click", () => { setTheme(document.body.classList.contains('light-theme') ? 'dark' : 'light'); });
+        document.getElementById("clearRememberBtn")?.addEventListener("click", () => { localStorage.removeItem('rememberedEmail'); localStorage.setItem('rememberFlag', 'false'); showToast('Credentials cleared'); });
+        document.getElementById("clearCacheBtn")?.addEventListener("click", () => showConfirm('Clear all local cache and reload?', () => { localStorage.removeItem('dmmhs_master_data'); location.reload(); }));
+    }
+    
+    function renderView(view) {
+        const container = document.getElementById("dynamicView");
+        if(currentDashboardChart) { try{ currentDashboardChart.destroy(); }catch(e){} currentDashboardChart=null; }
+        if(currentTrendChartGlobal) { try{ currentTrendChartGlobal.destroy(); }catch(e){} currentTrendChartGlobal=null; }
+        if(window.strandChart) { try{ window.strandChart.destroy(); }catch(e){} }
+        if(window.strandDetailChart) { try{ window.strandDetailChart.destroy(); }catch(e){} }
+        if (typeof destroyACCharts === 'function') destroyACCharts();
+        if(view === "dashboard") renderDashboard(container);
+        else if(view === "enrollment") renderEnrollment(container);
+        else if(view === "dropouts") renderDropouts(container);
+        else if(view === "repeaters") renderRepeaters(container);
+        else if(view === "teachers") renderTeachers(container);
+        else if(view === "shsstrands") renderSHSStrands(container);
+        else if(view === "reports") renderReports(container);
+        else if(view === "analytics") renderAnalytics(container);
+        else if(view === "logs") renderLogs(container);
+        else if(view === "dataAdmin") renderDataAdmin(container);
+        else if(view === "users") renderUsers(container);
+        else if(view === "settings") renderSettings(container);
+        else renderDashboard(container);
+        container.classList.add('view-enter');
+        const titles = { dashboard: 'Executive Dashboard', analytics: 'Analytics Continuum', reports: 'School Performance Reports', dataAdmin: 'Data Admin', shsstrands: 'SHS Strands' };
+        document.getElementById("currentPageTitle").innerText = titles[view] || view.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase());
+    }
+    
+    // Authentication (API + demo fallback)
+    const loginPageWrap=document.getElementById("loginPageWrap"), loginCard=document.getElementById("loginCard"), appWrapper=document.getElementById("appWrapper"), emailInp=document.getElementById("emailInput"), pwdInp=document.getElementById("passwordInput"), rememberChk=document.getElementById("rememberCheck"), togglePwd=document.getElementById("togglePwdIcon"), loginError=document.getElementById("loginError");
+    function showDashboardUI() { loginPageWrap?.classList.add('hidden'); document.body.classList.add('app-active'); appWrapper.style.display = 'flex'; tickClock(); }
+    function showLoginUI() { loginPageWrap?.classList.remove('hidden'); document.body.classList.remove('app-active'); appWrapper.style.display = 'none'; }
+    let pwdVisible=false; togglePwd.addEventListener("click",()=>{ pwdVisible=!pwdVisible; pwdInp.type=pwdVisible?"text":"password"; togglePwd.className=pwdVisible?"fas fa-eye toggle-pwd":"fas fa-eye-slash toggle-pwd"; });
+    function loadRemembered(){ const saved=localStorage.getItem('rememberedEmail'); if(localStorage.getItem('rememberFlag')==='true' && saved){ emailInp.value=saved; rememberChk.checked=true; } } loadRemembered();
+
+    async function doLogin(email, pwd) {
+        if (!email || !pwd || !email.includes('@')) {
+            loginError.innerText = "Valid email & password required";
+            loginError.style.display = "block";
+            return false;
+        }
+        loginError.style.display = "none";
+        try {
+            const res = await fetch(`${API_BASE}/api/auth/login`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: email.trim().toLowerCase(), password: pwd })
+            });
+            if (res.ok) {
+                const data = await res.json();
+                authToken = data.token;
+                currentUser = data.user;
+                localStorage.setItem('dmmhs_auth_token', authToken);
+                localStorage.setItem('dmmhs_current_user', JSON.stringify(currentUser));
+                await loadFromServer();
+            } else {
+                const err = await res.json().catch(() => ({}));
+                loginError.innerText = err.error || 'Invalid email or password';
+                loginError.style.display = 'block';
+                return false;
+            }
+        } catch {
+            if (IS_OFFLINE_FILE) {
+                if (email.includes('admin')) currentUser = { email, role: 'admin', name: 'Demo Admin' };
+                else if (email.includes('editor')) currentUser = { email, role: 'editor', name: 'Demo Editor' };
+                else currentUser = { email, role: 'viewer', name: 'Demo Viewer' };
+                authToken = null;
+                localStorage.removeItem('dmmhs_auth_token');
+                localStorage.setItem('dmmhs_current_user', JSON.stringify(currentUser));
+                updateSyncBadge(false, 'Offline demo mode');
+                showToast('Offline demo mode', 'info');
+            } else {
+                loginError.innerText = 'Cannot reach database server — run OPEN-DASHBOARD.bat';
+                loginError.style.display = 'block';
+                return false;
+            }
+        }
+        if (rememberChk.checked) { localStorage.setItem('rememberedEmail', email); localStorage.setItem('rememberFlag', 'true'); }
+        else { localStorage.removeItem('rememberedEmail'); localStorage.setItem('rememberFlag', 'false'); }
+        showDashboardUI();
+        updateUserPill();
+        addLog('login', `Signed in as ${currentUser.role}`);
+        renderView(currentView);
+        showToast(`Welcome, ${currentUser.name || currentUser.email}`, 'success');
+        return true;
+    }
+
+    document.getElementById("loginForm").addEventListener("submit", (e) => { e.preventDefault(); doLogin(emailInp.value.trim(), pwdInp.value); });
+    document.getElementById("forgotLink")?.addEventListener("click", (e) => { e.preventDefault(); showToast('Contact admin: admin@dmmhs.edu.ph'); });
+
+    function logout() {
+        authToken = null;
+        currentUser = { email: '', role: 'viewer', name: '' };
+        localStorage.removeItem('dmmhs_auth_token');
+        localStorage.removeItem('dmmhs_current_user');
+        showLoginUI();
+        pwdInp.value = "";
+        updateUserPill();
+    }
+
+    document.getElementById("btnPrint")?.addEventListener("click", () => window.print());
+    document.getElementById("btnExportJson")?.addEventListener("click", exportJsonBackup);
+    document.getElementById("btnExportExcel")?.addEventListener("click", exportExcelReport);
+    document.getElementById("logoutSidebarBtn").addEventListener("click",logout); document.getElementById("logoutTopBtn")?.addEventListener("click",logout);
+    document.querySelectorAll(".nav-item").forEach(item=>{ item.addEventListener("click",()=>{ document.querySelectorAll(".nav-item").forEach(nav=>nav.classList.remove("active")); item.classList.add("active"); currentView = item.getAttribute("data-view"); renderView(currentView); if(window.innerWidth<=780) document.getElementById("sidebar")?.classList.remove("show"); }); });
+    document.getElementById("mobileMenuToggle")?.addEventListener("click",()=>{ document.getElementById("sidebar")?.classList.toggle("show"); });
+    window.addEventListener("resize",()=>{ if(window.innerWidth>780) document.getElementById("sidebar")?.classList.remove("show"); });
+    document.getElementById("dashboardThemeToggle")?.addEventListener("click", () => { const newTheme = document.body.classList.contains('light-theme') ? 'dark' : 'light'; setTheme(newTheme); });
+    document.getElementById("loginThemeToggle")?.addEventListener("click", () => { const newTheme = document.body.classList.contains('light-theme') ? 'dark' : 'light'; setTheme(newTheme); });
+    initTheme();
+    updateUserPill();
+    tickClock();
+    setInterval(tickClock, 1000);
+    // Auto-launch dashboard on page load for direct dashboard access
+    showDashboardUI();
+    renderView(currentView);
+    document.getElementById('btnNotif')?.addEventListener('click', () => showToast('No new notifications', 'info'));
+    document.getElementById('sidebarCollapse')?.addEventListener('click', () => {
+        const sb = document.getElementById('sidebar');
+        sb?.classList.toggle('collapsed');
+        document.getElementById('appWrapper')?.classList.toggle('sidebar-collapsed');
+        const icon = document.querySelector('#sidebarCollapse i');
+        if (icon) icon.className = sb?.classList.contains('collapsed') ? 'fas fa-chevron-right' : 'fas fa-chevron-left';
+    });
+    window.addEventListener('dmmhs:yearchange', (e) => {
+        const y = e.detail?.year;
+        const main = document.getElementById('mainContent');
+        if (!main || !y) return;
+        if (currentView === 'analytics' && typeof renderAnalyticsContinuum === 'function') renderAnalyticsContinuum(main);
+        else if (currentView === 'reports' && typeof renderReportsContinuum === 'function') renderReportsContinuum(main);
+    });
+
+    async function initSession() {
+        showLoginUI();
+        if (IS_OFFLINE_FILE) {
+            updateSyncBadge(false, 'Offline file — sign in to continue');
+            if (currentUser?.email) {
+                showDashboardUI();
+                updateUserPill();
+                renderView(currentView);
+            }
+            return;
+        }
+        try {
+            const healthRes = await fetch(`${API_BASE}/api/health`);
+            if (healthRes.ok) {
+                const health = await healthRes.json();
+                updateSyncBadge(true, health.database === 'sqlite' ? 'SQLite database ready' : 'API ready');
+                if (authToken && currentUser?.email) {
+                    const loaded = await loadFromServer();
+                    if (loaded) {
+                        showDashboardUI();
+                        updateUserPill();
+                        renderView(currentView);
+                        return;
+                    }
+                    authToken = null;
+                    localStorage.removeItem('dmmhs_auth_token');
+                }
+            } else {
+                updateSyncBadge(false, 'Server error — use demo login');
+            }
+        } catch {
+            updateSyncBadge(false, 'Run OPEN-DASHBOARD.bat for database server');
+        }
+        showLoginUI();
+    }
+
+    initSession();
+</script>
+</body>
+</html>
